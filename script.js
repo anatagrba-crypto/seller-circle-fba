@@ -5,8 +5,8 @@
 
 /* ── CENTRALIZED LINKS SYSTEM ── */
 const LINKS = {
-  checkout:  'pages/checkout.html',
-  register:  'pages/register.html',
+  checkout:  'https://ana-tagrba.systeme.io/68684523',
+  register:  'https://ana-tagrba.systeme.io/68684523',
   login:     'pages/login.html',
   dashboard: 'pages/dashboard.html',
   course:    'pages/course.html',
