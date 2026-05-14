@@ -2,18 +2,21 @@
   "version": 2,
   "name": "seller-circle-fba",
   "redirects": [
-    { "source": "/register", "destination": "https://ana-tagrba.systeme.io/68684523", "permanent": false },
-    { "source": "/checkout", "destination": "https://ana-tagrba.systeme.io/68684523", "permanent": false },
-    { "source": "/login",    "destination": "https://app.systeme.io/dashboard",        "permanent": false },
-    { "source": "/dashboard","destination": "https://app.systeme.io/dashboard",        "permanent": false },
-    { "source": "/course",   "destination": "https://app.systeme.io/dashboard",        "permanent": false }
+    { "source": "/checkout",  "destination": "https://ana-tagrba.systeme.io/8144854c",                         "permanent": false },
+    { "source": "/register",  "destination": "https://ana-tagrba.systeme.io/8144854c",                         "permanent": false },
+    { "source": "/enroll",    "destination": "https://ana-tagrba.systeme.io/8144854c",                         "permanent": false },
+    { "source": "/join",      "destination": "https://ana-tagrba.systeme.io/8144854c",                         "permanent": false },
+    { "source": "/login",     "destination": "https://app.systeme.io/dashboard",                                "permanent": false },
+    { "source": "/dashboard", "destination": "https://app.systeme.io/dashboard",                                "permanent": false },
+    { "source": "/course",    "destination": "https://ana-tagrba.systeme.io/school/course/seller-circle-fba",  "permanent": false },
+    { "source": "/thankyou",  "destination": "https://ana-tagrba.systeme.io/1e098311",                         "permanent": false }
   ],
   "routes": [
-    { "src": "/",           "dest": "/index.html" },
-    { "src": "/privacy",    "dest": "/pages/privacy.html" },
-    { "src": "/terms",      "dest": "/pages/terms.html" },
-    { "src": "/refund",     "dest": "/pages/refund.html" },
-    { "src": "/(.*)",       "dest": "/$1" }
+    { "src": "/",        "dest": "/index.html" },
+    { "src": "/privacy", "dest": "/pages/privacy.html" },
+    { "src": "/terms",   "dest": "/pages/terms.html" },
+    { "src": "/refund",  "dest": "/pages/refund.html" },
+    { "src": "/(.*)",    "dest": "/$1" }
   ],
   "headers": [
     {

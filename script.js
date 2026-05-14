@@ -5,18 +5,22 @@
 
 /* ── CENTRALIZED LINKS SYSTEM ── */
 const LINKS = {
-  checkout:  'https://ana-tagrba.systeme.io/68684523',
-  register:  'https://ana-tagrba.systeme.io/68684523',
+  checkout:  'https://ana-tagrba.systeme.io/8144854c',
+  register:  'https://ana-tagrba.systeme.io/8144854c',
+  enroll:    'https://ana-tagrba.systeme.io/8144854c',
+  join:      'https://ana-tagrba.systeme.io/8144854c',
+  cta:       'https://ana-tagrba.systeme.io/8144854c',
   login:     'https://app.systeme.io/dashboard',
   dashboard: 'https://app.systeme.io/dashboard',
-  course:    'https://app.systeme.io/dashboard',
-  thankyou:  'https://ana-tagrba.systeme.io/68684523',
+  course:    'https://ana-tagrba.systeme.io/school/course/seller-circle-fba',
+  thankyou:  'https://ana-tagrba.systeme.io/1e098311',
+  funnel:    'https://ana-tagrba.systeme.io/68684523',
   privacy:   'pages/privacy.html',
   terms:     'pages/terms.html',
   refund:    'pages/refund.html',
   whatsapp:  'https://wa.me/201030435954',
   support:   'mailto:support@sellercircle.com',
-  systeme:   'https://ana-tagrba.systeme.io/68684523'
+  systeme:   'https://ana-tagrba.systeme.io/8144854c'
 };
 
 /* ── INJECT LINKS INTO ALL CTA BUTTONS ── */
