@@ -1,41 +1,27 @@
 {
   "version": 2,
   "name": "seller-circle-fba",
-  "builds": [
-    {
-      "src": "**/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "**/*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "**/*.js",
-      "use": "@vercel/static"
-    }
+  "redirects": [
+    { "source": "/register", "destination": "https://ana-tagrba.systeme.io/68684523", "permanent": false },
+    { "source": "/checkout", "destination": "https://ana-tagrba.systeme.io/68684523", "permanent": false },
+    { "source": "/login",    "destination": "https://app.systeme.io/dashboard",        "permanent": false },
+    { "source": "/dashboard","destination": "https://app.systeme.io/dashboard",        "permanent": false },
+    { "source": "/course",   "destination": "https://app.systeme.io/dashboard",        "permanent": false }
   ],
   "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/checkout", "dest": "/pages/checkout.html" },
-    { "src": "/login", "dest": "/pages/login.html" },
-    { "src": "/register", "dest": "/pages/register.html" },
-    { "src": "/dashboard", "dest": "/pages/dashboard.html" },
-    { "src": "/course", "dest": "/pages/course.html" },
-    { "src": "/thank-you", "dest": "/pages/thank-you.html" },
-    { "src": "/privacy", "dest": "/pages/privacy.html" },
-    { "src": "/terms", "dest": "/pages/terms.html" },
-    { "src": "/refund", "dest": "/pages/refund.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/",           "dest": "/index.html" },
+    { "src": "/privacy",    "dest": "/pages/privacy.html" },
+    { "src": "/terms",      "dest": "/pages/terms.html" },
+    { "src": "/refund",     "dest": "/pages/refund.html" },
+    { "src": "/(.*)",       "dest": "/$1" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "X-XSS-Protection",       "value": "1; mode=block" },
+        { "key": "Cache-Control",           "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
