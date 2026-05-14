@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Circle | تعلم البيع على أمازون FBA من الصفر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --orange:#FF9900;
+  --orange-dark:#cc7a00;
+  --black:#0F1111;
+  --dark:#131921;
+  --dark2:#1C2730;
+  --dark3:#232F3E;
+  --white:#FFFFFF;
+  --gray:#8B949E;
+  --border:rgba(255,153,0,0.18);
+  --green:#4ade80;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);direction:rtl;overflow-x:hidden;line-height:1.6}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(15,17,17,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-size:20px;font-weight:900;color:var(--white);letter-spacing:-0.5px}
+.nav-logo span{color:var(--orange)}
+.nav-cta{
+  background:var(--orange);color:var(--black);
+  font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;
+  padding:10px 18px;border:none;border-radius:6px;cursor:pointer;
+  text-decoration:none;white-space:nowrap;transition:background .2s
+}
+.nav-cta:hover{background:var(--orange-dark)}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(180deg,#131921 0%,#0F1111 100%);
+  padding:88px 20px 60px;text-align:center;
+}
+.hero-hook{
+  display:inline-block;
+  background:rgba(255,153,0,0.12);border:1px solid var(--orange);
+  color:var(--orange);font-size:13px;font-weight:700;
+  padding:8px 20px;border-radius:50px;margin-bottom:22px;
+}
+.hero h1{font-size:26px;font-weight:900;line-height:1.45;margin-bottom:14px}
+.hero h1 span{color:var(--orange)}
+.hero-sub{font-size:15px;color:#ccc;margin-bottom:30px;line-height:1.8;max-width:480px;margin-left:auto;margin-right:auto}
+
+/* video + case study */
+.hero-media{margin-bottom:28px}
+.video-box{
+  border-radius:14px;overflow:hidden;
+  border:2px solid var(--border);margin-bottom:14px;
+  position:relative;padding-top:56.25%;background:var(--dark3);
+}
+.video-box iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.case-card{
+  background:var(--orange);border-radius:14px;
+  padding:22px 16px;text-align:center;
+}
+.case-card .num{font-size:38px;font-weight:900;color:var(--black);display:block;line-height:1}
+.case-card .lbl{font-size:14px;font-weight:700;color:var(--black);margin-top:6px;display:block}
+
+/* countdown */
+.cd-wrap{margin-bottom:26px}
+.cd-title{font-size:13px;color:var(--gray);margin-bottom:10px}
+.cd-row{display:flex;justify-content:center;gap:8px}
+.cd-box{
+  background:var(--dark3);border:1px solid var(--border);
+  border-radius:10px;padding:12px 14px;text-align:center;min-width:62px;
+}
+.cd-num{display:block;font-size:26px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums}
+.cd-lbl{font-size:10px;color:var(--gray);margin-top:2px}
+
+/* price hero */
+.price-hero{margin-bottom:26px}
+.ph-row{font-size:16px;color:var(--gray);text-decoration:line-through;margin-bottom:4px}
+.ph-big{font-size:44px;font-weight:900;color:var(--orange);line-height:1}
+.ph-currency{font-size:22px}
+.ph-badge{
+  display:inline-block;background:#1a4a1a;color:var(--green);
+  font-size:13px;font-weight:700;padding:5px 14px;
+  border-radius:20px;margin-top:8px;
+}
+
+/* buttons */
+.btn-p{
+  display:block;background:var(--orange);color:var(--black);
+  font-family:'Cairo',sans-serif;font-weight:900;font-size:17px;
+  padding:17px;border:none;border-radius:10px;cursor:pointer;
+  text-decoration:none;text-align:center;width:100%;
+  margin-bottom:12px;transition:transform .2s,background .2s;
+}
+.btn-p:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.btn-s{
+  display:block;background:transparent;color:var(--white);
+  font-family:'Cairo',sans-serif;font-weight:700;font-size:15px;
+  padding:15px;border:2px solid rgba(255,255,255,0.25);
+  border-radius:10px;cursor:pointer;text-decoration:none;
+  text-align:center;width:100%;transition:border-color .2s,color .2s;
+}
+.btn-s:hover{border-color:var(--orange);color:var(--orange)}
+
+/* ===== STATS BAR ===== */
+.stats-bar{
+  background:var(--dark3);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:24px 20px;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+}
+.s-item{text-align:center}
+.s-num{font-size:26px;font-weight:900;color:var(--orange);display:block}
+.s-lbl{font-size:12px;color:#ccc}
+
+/* ===== SECTIONS ===== */
+section{padding:60px 20px}
+.sec-title{font-size:22px;font-weight:900;text-align:center;margin-bottom:6px;line-height:1.4}
+.sec-title span{color:var(--orange)}
+.sec-sub{text-align:center;color:var(--gray);font-size:14px;margin-bottom:0;line-height:1.7}
+.orange-line{width:56px;height:4px;background:var(--orange);border-radius:2px;margin:12px auto 28px}
+
+/* ===== WHY AMAZON ===== */
+.why-bg{background:var(--dark)}
+.why-cards{display:flex;flex-direction:column;gap:14px}
+.w-card{background:var(--dark2);border:1px solid var(--border);border-radius:12px;padding:22px}
+.w-icon{font-size:34px;margin-bottom:10px}
+.w-card h3{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--orange)}
+.w-card p{font-size:13px;color:#ccc;line-height:1.7}
+
+/* ===== WHAT YOU LEARN ===== */
+.learn-bg{background:var(--black)}
+.learn-list{display:flex;flex-direction:column;gap:10px}
+.l-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:10px;padding:15px;
+}
+.l-num{
+  background:var(--orange);color:var(--black);font-weight:900;font-size:13px;
+  width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.l-text h4{font-size:14px;font-weight:700;margin-bottom:3px}
+.l-text p{font-size:12px;color:#aaa;line-height:1.6}
+
+/* ===== SALES PROOF CAROUSEL ===== */
+.sales-bg{background:var(--dark)}
+.carousel{overflow:hidden}
+.car-track{
+  display:flex;gap:12px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding-bottom:4px;
+}
+.car-track::-webkit-scrollbar{display:none}
+.car-slide{
+  flex:0 0 82vw;max-width:320px;scroll-snap-align:start;
+  border-radius:12px;overflow:hidden;
+  border:2px dashed rgba(255,153,0,0.3);background:var(--dark2);
+}
+.car-slide img{width:100%;height:200px;object-fit:cover;display:block}
+.ph-slide{
+  width:100%;height:200px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.ph-slide .ph-ico{font-size:44px;opacity:.25}
+.ph-slide .ph-txt{font-size:13px;color:var(--gray);opacity:.6}
+.car-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--dark3);cursor:pointer;transition:all .2s}
+.dot.active{background:var(--orange);width:22px;border-radius:4px}
+
+/* ===== WHO ===== */
+.who-bg{background:var(--black)}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.who-card{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:12px;padding:18px 14px;text-align:center;
+}
+.who-ico{font-size:30px;margin-bottom:8px}
+.who-card h3{font-size:14px;font-weight:700;margin-bottom:5px}
+.who-card p{font-size:12px;color:#aaa;line-height:1.5}
+
+/* ===== TESTIMONIALS ===== */
+.test-bg{background:var(--dark)}
+.test-list{display:flex;flex-direction:column;gap:14px}
+.t-card{background:var(--dark2);border:1px solid var(--border);border-radius:12px;padding:20px}
+.t-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.t-av{
+  width:44px;height:44px;border-radius:50%;background:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:var(--black);flex-shrink:0;
+}
+.t-name{font-weight:700;font-size:14px}
+.t-stars{color:var(--orange);font-size:13px}
+.t-body{font-size:13px;color:#ccc;line-height:1.7}
+.t-result{
+  margin-top:12px;background:rgba(255,153,0,0.08);
+  border:1px solid var(--border);border-radius:8px;
+  padding:9px 14px;font-size:12px;font-weight:700;color:var(--orange);
+}
+
+/* ===== INSTRUCTOR ===== */
+.ins-bg{background:var(--black)}
+.ins-card{background:var(--dark2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.ins-photo{
+  width:100%;height:260px;background:var(--dark3);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  border-bottom:1px solid var(--border);
+}
+.ins-photo img{width:100%;height:260px;object-fit:cover;display:block}
+.ins-ph-ico{font-size:72px;opacity:.15}
+.ins-ph-txt{font-size:13px;color:var(--gray);opacity:.5}
+.ins-info{padding:22px}
+.ins-name{font-size:20px;font-weight:900;margin-bottom:3px}
+.ins-title{color:var(--orange);font-size:13px;font-weight:600;margin-bottom:14px}
+.ins-bio{font-size:13px;color:#ccc;line-height:1.8;margin-bottom:18px}
+.ins-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.is-box{background:var(--dark3);border-radius:10px;padding:12px 8px;text-align:center}
+.is-num{display:block;font-size:18px;font-weight:900;color:var(--orange)}
+.is-lbl{font-size:10px;color:#aaa}
+
+/* ===== PRICE ===== */
+.price-bg{background:var(--dark)}
+.price-card{
+  background:var(--dark2);border:2px solid var(--orange);
+  border-radius:16px;overflow:hidden;max-width:480px;margin:0 auto;
+}
+.price-head{background:var(--orange);padding:20px;text-align:center}
+.price-head h3{font-size:17px;font-weight:900;color:var(--black);margin-bottom:3px}
+.price-head p{font-size:12px;color:rgba(0,0,0,.65)}
+.price-body{padding:26px 22px}
+.price-big{text-align:center;margin-bottom:6px}
+.price-main{font-size:50px;font-weight:900;color:var(--orange)}
+.price-curr{font-size:22px;color:var(--orange)}
+.price-old{text-align:center;font-size:16px;color:var(--gray);text-decoration:line-through;margin-bottom:18px}
+.price-feats{list-style:none;margin-bottom:20px}
+.price-feats li{
+  padding:10px 0;border-bottom:1px solid var(--border);
+  font-size:13px;display:flex;align-items:center;gap:10px;
+}
+.price-feats li:last-child{border-bottom:none}
+.chk{color:var(--green);font-size:15px}
+.pay-box{background:var(--dark3);border-radius:10px;padding:14px;text-align:center;margin-bottom:18px}
+.pay-box p{font-size:12px;color:var(--gray);margin-bottom:8px}
+.pay-icons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.pay-badge{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--white);
+}
+
+/* ===== GUARANTEE ===== */
+.guar-bg{background:var(--black)}
+.guar-card{
+  background:linear-gradient(135deg,#0d1f0d,#1a2a1a);
+  border:2px solid var(--green);border-radius:16px;
+  padding:32px 22px;text-align:center;max-width:480px;margin:0 auto;
+}
+.guar-ico{font-size:56px;margin-bottom:14px}
+.guar-card h3{font-size:20px;font-weight:900;color:var(--green);margin-bottom:10px}
+.guar-card p{font-size:13px;color:#ccc;line-height:1.8}
+.guar-badge{
+  display:inline-block;background:var(--green);color:#0d1f0d;
+  font-weight:900;font-size:13px;padding:8px 22px;
+  border-radius:50px;margin-top:14px;
+}
+
+/* ===== FAQ ===== */
+.faq-bg{background:var(--dark)}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--dark2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{
+  padding:16px 18px;font-size:14px;font-weight:700;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  user-select:none;
+}
+.faq-arr{color:var(--orange);font-size:16px;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-in{
+  padding:14px 18px 18px;font-size:13px;color:#aaa;
+  line-height:1.8;border-top:1px solid var(--border);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--dark3);border-top:1px solid var(--border);
+  padding:30px 20px;text-align:center;
+}
+.f-logo{font-size:20px;font-weight:900;margin-bottom:14px}
+.f-logo span{color:var(--orange)}
+.f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+.f-links a{color:#888;text-decoration:none;font-size:12px}
+.f-links a:hover{color:var(--orange)}
+.f-copy{font-size:11px;color:#555}
+
+/* ===== WHATSAPP ===== */
+.wa-btn{
+  position:fixed;bottom:22px;left:22px;
+  width:54px;height:54px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(37,211,102,.4);z-index:999;
+  text-decoration:none;transition:transform .2s;
+}
+.wa-btn:hover{transform:scale(1.1)}
+.wa-btn svg{width:28px;height:28px;fill:white}
+
+/* ===== DESKTOP ===== */
+@media(min-width:768px){
+  .hero{padding:100px 40px 80px}
+  .hero h1{font-size:38px}
+  .hero-media{margin-bottom:32px}
+  .video-box{margin-bottom:0;padding-top:0;height:360px}
+  .video-box iframe{position:static;width:100%;height:100%}
+  .stats-bar{grid-template-columns:repeat(4,1fr)}
+  section{padding:80px 40px}
+  .sec-title{font-size:30px}
+  .why-cards{flex-direction:row}
+  .w-card{flex:1}
+  .car-slide{flex:0 0 300px}
+  .who-grid{grid-template-columns:repeat(4,1fr)}
+  .test-list{flex-direction:row}
+  .t-card{flex:1}
+  .ins-card{display:grid;grid-template-columns:300px 1fr}
+  .ins-photo{height:auto;min-height:360px}
+  .ins-photo img{height:auto;min-height:360px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav>
+  <div class="nav-logo">Seller <span>Circle</span></div>
+  <a href="#price" class="nav-cta">اشترك الآن — 999ج</a>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-hook">🚀 أمازون FBA — الفرصة الحقيقية لا تزال موجودة</div>
+  <h1>ابدأ بيزنسك على <span>أمازون FBA</span><br>من الصفر حتى أول شحنة</h1>
+  <p class="hero-sub">الكورس اللي هتتعلم فيه كل خطوة بشكل عملي — من فتح الحساب لأول مبيعات حقيقية على أمازون</p>
+
+  <div class="hero-media">
+    <div class="video-box" style="max-width:640px;margin:0 auto">
+      <iframe src="https://iframe.mediadelivery.net/embed/657446/01f28482-8d26-4e12-a260-90dedbdadad3?autoplay=false&loop=false&muted=false&preload=true"
+              allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+              allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="cd-wrap">
+    <p class="cd-title">⏰ العرض ينتهي خلال</p>
+    <div class="cd-row">
+      <div class="cd-box"><span class="cd-num" id="cd-d">03</span><span class="cd-lbl">يوم</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-h">23</span><span class="cd-lbl">ساعة</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">59</span><span class="cd-lbl">دقيقة</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-lbl">ثانية</span></div>
+    </div>
+  </div>
+
+  <div class="price-hero">
+    <div class="ph-row">5,999 جنيه</div>
+    <div><span class="price-main ph-big">999</span><span class="ph-currency"> ج</span></div>
+    <div><span class="ph-badge">✅ وفّر 83% — عرض محدود</span></div>
+  </div>
+
+  <a href="#price" class="btn-p">🛒 اشترك الآن بـ 999ج فقط</a>
+  <a href="/my-account" class="btn-s">🔑 سجل دخولك</a>
+</section>
+
+<!-- ══════════════ STATS BAR ══════════════ -->
+<div class="stats-bar">
+  <div class="s-item"><span class="s-num">+950</span><span class="s-lbl">طالب مسجل</span></div>
+  <div class="s-item"><span class="s-num">33</span><span class="s-lbl">فيديو تعليمي</span></div>
+  <div class="s-item"><span class="s-num">7</span><span class="s-lbl">وحدات كاملة</span></div>
+  <div class="s-item"><span class="s-num">4.9★</span><span class="s-lbl">تقييم الطلاب</span></div>
+</div>
+
+<!-- ══════════════ WHY AMAZON ══════════════ -->
+<section class="why-bg">
+  <h2 class="sec-title">لماذا <span>أمازون</span> هو أفضل بيزنس الآن؟</h2>
+  <div class="orange-line"></div>
+  <div class="why-cards">
+    <div class="w-card">
+      <div class="w-icon">💰</div>
+      <h3>عائد استثماري عالي</h3>
+      <p>أمازون من أكتر المنصات اللي بتديك ربح حقيقي بأقل مخاطرة — لو اتعلمت صح</p>
+    </div>
+    <div class="w-card">
+      <div class="w-icon">🌍</div>
+      <h3>اعمل من أي مكان</h3>
+      <p>بيزنس 100% أونلاين — من مصر، من البيت، من أي مكان في العالم بأي وقت</p>
+    </div>
+    <div class="w-card">
+      <div class="w-icon">📦</div>
+      <h3>أمازون بيتولى الشحن</h3>
+      <p>FBA يعني أمازون بيتولى التخزين والتوصيل — أنت بس ركّز على البيع والربح</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHAT YOU LEARN ══════════════ -->
+<section class="learn-bg">
+  <h2 class="sec-title">ماذا ستتعلم <span>بالضبط؟</span></h2>
+  <p class="sec-sub">33 فيديو عملي — 7 وحدات من الصفر للاحتراف</p>
+  <div class="orange-line"></div>
+  <div class="learn-list">
+    <div class="l-item">
+      <div class="l-num">١</div>
+      <div class="l-text">
+        <h4>البداية وفتح حساب البائع</h4>
+        <p>فتح الأكاونت خطوة بخطوة والإعداد الصح من أول يوم</p>
+      </div>
+    </div>
+    <div class="l-item">
+      <div class="l-num">٢</div>
+      <div class="l-text">
+        <h4>أساسيات السوق ومصطلحات أمازون</h4>
+        <p>كل المصطلحات والمفاهيم الأساسية اللي محتاجها تفهم السوق</p>
+      </div>
+    </div>
+    <div class="l-item">
+      <div class="l-num">٣</div>
+      <div class="l-text">
+        <h4>البحث عن المنتج المربح</h4>
+        <p>استخدام أدوات البحث الاحترافية لاختيار منتج بيجيب فلوس</p>
+      </div>
+    </div>
+    <div class="l-item">
+      <div class="l-num">٤</div>
+      <div class="l-text">
+        <h4>تجهيز المنتج والتواصل مع الموردين</h4>
+        <p>إزاي تتفاوض مع الموردين وتاخد أحسن سعر وجودة</p>
+      </div>
+    </div>
+    <div class="l-item">
+      <div class="l-num">٥</div>
+      <div class="l-text">
+        <h4>الشحن الدولي FBA</h4>
+        <p>خطوات الشحن من المورد لمستودعات أمازون بشكل صح ومضمون</p>
+      </div>
+    </div>
+    <div class="l-item">
+      <div class="l-num">٦</div>
+      <div class="l-text">
+        <h4>إدارة المبيعات والإعلانات PPC</h4>
+        <p>إطلاق الإعلانات وإدارتها بشكل مربح لزيادة المبيعات</p>
+      </div>
+    </div>
+    <div class="l-item">
+      <div class="l-num">٧</div>
+      <div class="l-text">
+        <h4>التوسع وزيادة المبيعات</h4>
+        <p>إزاي تكبّر البيزنس وتضاعف الأرباح على أمازون على المدى الطويل</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SALES PROOF CAROUSEL ══════════════ -->
+<section class="sales-bg">
+  <h2 class="sec-title">📊 نتائج <span>حقيقية</span> على أمازون</h2>
+  <p class="sec-sub">أرقام مبيعات من Seller Central — مش كلام</p>
+  <div class="orange-line"></div>
+  <div class="carousel">
+    <div class="car-track" id="carTrack">
+      <div class="car-slide">
+        <div class="ph-slide">
+          <span class="ph-ico">📸</span>
+          <span class="ph-txt">صورة مبيعات ١</span>
+        </div>
+      </div>
+      <div class="car-slide">
+        <div class="ph-slide">
+          <span class="ph-ico">📸</span>
+          <span class="ph-txt">صورة مبيعات ٢</span>
+        </div>
+      </div>
+      <div class="car-slide">
+        <div class="ph-slide">
+          <span class="ph-ico">📸</span>
+          <span class="ph-txt">صورة مبيعات ٣</span>
+        </div>
+      </div>
+      <div class="car-slide">
+        <div class="ph-slide">
+          <span class="ph-ico">📸</span>
+          <span class="ph-txt">صورة مبيعات ٤</span>
+        </div>
+      </div>
+      <div class="car-slide">
+        <div class="ph-slide">
+          <span class="ph-ico">📸</span>
+          <span class="ph-txt">صورة مبيعات ٥</span>
+        </div>
+      </div>
+    </div>
+    <div class="car-dots" id="carDots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHO ══════════════ -->
+<section class="who-bg">
+  <h2 class="sec-title">لمن هذا <span>الكورس؟</span></h2>
+  <div class="orange-line"></div>
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-ico">🌱</div>
+      <h3>المبتدئ</h3>
+      <p>مش عارف تبدأ منين على أمازون</p>
+    </div>
+    <div class="who-card">
+      <div class="who-ico">💼</div>
+      <h3>صاحب العمل</h3>
+      <p>عايز يفتح قناة مبيعات جديدة</p>
+    </div>
+    <div class="who-card">
+      <div class="who-ico">📈</div>
+      <h3>السيلر الموجود</h3>
+      <p>عايز يطوّر ويكبّر بيزنسه</p>
+    </div>
+    <div class="who-card">
+      <div class="who-ico">🎓</div>
+      <h3>الطالب والموظف</h3>
+      <p>عايز مصدر دخل إضافي أونلاين</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section class="test-bg">
+  <h2 class="sec-title">آراء <span>الطلاب</span></h2>
+  <div class="orange-line"></div>
+  <div class="test-list">
+    <div class="t-card">
+      <div class="t-head">
+        <div class="t-av">أ</div>
+        <div><div class="t-name">أحمد محمد</div><div class="t-stars">★★★★★</div></div>
+      </div>
+      <p class="t-body">الكورس غيّر طريقة تفكيري في موضوع البيع أونلاين. خطوة بخطوة وواضح جداً، مش زي أي كورس تاني</p>
+      <div class="t-result">✅ وصل لأول مبيعاته على أمازون</div>
+    </div>
+    <div class="t-card">
+      <div class="t-head">
+        <div class="t-av">م</div>
+        <div><div class="t-name">محمد علي</div><div class="t-stars">★★★★★</div></div>
+      </div>
+      <p class="t-body">استفدت جداً من جزء البحث عن المنتج — كنت مش عارف أبدأ منين وبعد الكورس بقيت فاهم بالظبط اختار إيه</p>
+      <div class="t-result">✅ اختار منتجه الأول وبدأ شحنه</div>
+    </div>
+    <div class="t-card">
+      <div class="t-head">
+        <div class="t-av">س</div>
+        <div><div class="t-name">سارة أحمد</div><div class="t-stars">★★★★★</div></div>
+      </div>
+      <p class="t-body">كنت خايفة أجرب أمازون بس بعد الكورس حسيت إن عندي الأدوات الكافية للبدء بثقة وبدون خوف</p>
+      <div class="t-result">✅ بدأت رحلتها على أمازون</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ INSTRUCTOR ══════════════ -->
+<section class="ins-bg">
+  <h2 class="sec-title">من <span>أنا؟</span></h2>
+  <div class="orange-line"></div>
+  <div class="ins-card">
+    <!-- ضع صورتك هنا: استبدل الـ div ده بـ <img src="صورتك.jpg" alt="اسمك"> -->
+    <div class="ins-photo" id="insPhoto">
+      <span class="ins-ph-ico">👤</span>
+      <span class="ins-ph-txt">أضف صورتك هنا</span>
+    </div>
+    <div class="ins-info">
+      <div class="ins-name">اسمك هنا</div>
+      <div class="ins-title">بائع محترف على أمازون FBA | مدرب متخصص</div>
+      <p class="ins-bio">
+        بدأت رحلتي على أمازون من الصفر، ومريت بتجارب كتير قبل ما أوصل للطريقة الصح.
+        بعد سنوات من التعلم والتطبيق الفعلي، تمكنت من بناء بيزنس ناجح على أمازون FBA.
+        هدفي إنك تاخد الطريق الصح من أول يوم وتتجنب الأخطاء الكلفانة.
+      </p>
+      <div class="ins-stats">
+        <div class="is-box"><span class="is-num">+950</span><span class="is-lbl">طالب</span></div>
+        <div class="is-box"><span class="is-num">3+</span><span class="is-lbl">سنوات خبرة</span></div>
+        <div class="is-box"><span class="is-num">7</span><span class="is-lbl">وحدات</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRICE ══════════════ -->
+<section class="price-bg" id="price">
+  <h2 class="sec-title">سعر <span>الكورس</span></h2>
+  <p class="sec-sub">استثمار واحد — وصول مدى الحياة</p>
+  <div class="orange-line"></div>
+
+  <div style="margin-bottom:24px;text-align:center">
+    <div class="cd-row" style="justify-content:center;margin-bottom:8px">
+      <div class="cd-box"><span class="cd-num" id="cd-d2">03</span><span class="cd-lbl">يوم</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-h2">23</span><span class="cd-lbl">ساعة</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m2">59</span><span class="cd-lbl">دقيقة</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s2">00</span><span class="cd-lbl">ثانية</span></div>
+    </div>
+    <p style="font-size:12px;color:var(--gray)">⏰ بعد انتهاء العداد السعر بيرجع 5,999ج</p>
+  </div>
+
+  <div class="price-card">
+    <div class="price-head">
+      <h3>Seller Circle — الكورس الكامل</h3>
+      <p>وصول مدى الحياة + تحديثات مجانية</p>
+    </div>
+    <div class="price-body">
+      <div class="price-big"><span class="price-main">999</span><span class="price-curr"> ج</span></div>
+      <div class="price-old">بدلاً من 5,999 جنيه</div>
+      <ul class="price-feats">
+        <li><span class="chk">✅</span> 33 فيديو تعليمي عملي</li>
+        <li><span class="chk">✅</span> 7 وحدات من الصفر للاحتراف</li>
+        <li><span class="chk">✅</span> وصول مدى الحياة + تحديثات مجانية</li>
+        <li><span class="chk">✅</span> مجموعة واتساب للدعم</li>
+        <li><span class="chk">✅</span> ضمان استرداد المال الكامل</li>
+      </ul>
+      <div class="pay-box">
+        <p>طرق الدفع المتاحة</p>
+        <div class="pay-icons">
+          <span class="pay-badge">💳 كارت بنكي</span>
+          <span class="pay-badge">📱 إنستاباي</span>
+          <span class="pay-badge">📞 فودافون كاش</span>
+        </div>
+      </div>
+      <a href="/checkout" class="btn-p">🚀 اشترك الآن بـ 999ج</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ GUARANTEE ══════════════ -->
+<section class="guar-bg">
+  <div class="guar-card">
+    <div class="guar-ico">🛡️</div>
+    <h3>ضمان استرداد المال الكامل</h3>
+    <p>
+      جرّب الكورس بدون أي مخاطرة.<br><br>
+      لو شاهدت الكورس وحسيت إنه مش المناسب ليك،
+      هنرد عليك <strong>فلوسك بالكامل 100%</strong> — بدون أسئلة.<br><br>
+      <strong>الشرط الوحيد:</strong> تكون مشاهدت أقل من 20% من الكورس (٤-٥ دروس فقط)
+    </p>
+    <span class="guar-badge">✅ ضمان كامل — صفر مخاطرة</span>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="faq-bg">
+  <h2 class="sec-title">الأسئلة <span>الشائعة</span></h2>
+  <div class="orange-line"></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">هل الكورس مناسب للمبتدئ اللي معندوش خبرة؟ <span class="faq-arr">▼</span></div>
+      <div class="faq-a"><div class="faq-a-in">أيوه، الكورس بيبدأ من الصفر الكامل. مش محتاج أي خبرة سابقة في البيع أو التجارة — بس محتاج رغبة حقيقية في التعلم والتطبيق.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">قد إيه رأس المال المطلوب للبدء على أمازون؟ <span class="faq-arr">▼</span></div>
+      <div class="faq-a"><div class="faq-a-in">ممكن تبدأ بـ 1,500 - 3,000 دولار كـ minimum. الكورس بيوضح كل التفاصيل وإزاي تختار منتج يناسب ميزانيتك بالظبط.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">هل الوصول للكورس مدى الحياة؟ <span class="faq-arr">▼</span></div>
+      <div class="faq-a"><div class="faq-a-in">أيوه بالتأكيد. بمجرد اشتراكك بتاخد وصول مدى الحياة + أي تحديثات جديدة هتتضاف للكورس مجاناً.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">إيه سياسة استرداد المال؟ <span class="faq-arr">▼</span></div>
+      <div class="faq-a"><div class="faq-a-in">لو شاهدت أقل من 20% من الكورس (٤-٥ دروس) وحسيت إنه مش مناسب ليك، بنرد عليك فلوسك بالكامل بدون أسئلة.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">هل ممكن أبيع على أمازون من مصر؟ <span class="faq-arr">▼</span></div>
+      <div class="faq-a"><div class="faq-a-in">أيوه بالتأكيد! الكورس مصمم خصيصاً للبائعين المصريين والعرب — بيغطي كل خطوات فتح الحساب والعمل على أمازون من مصر.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">إيه الفرق بين الكورس ده والكورسات التانية؟ <span class="faq-arr">▼</span></div>
+      <div class="faq-a"><div class="faq-a-in">الكورس ده مبني على تجربة حقيقية — مش نظريات. كل خطوة اتعلمتها بالعمل الفعلي على أمازون، والمحتوى بيتحدّث بشكل مستمر.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="f-logo">Seller <span>Circle</span></div>
+  <div class="f-links">
+    <a href="/privacy-policy">سياسة الخصوصية</a>
+    <a href="/terms">الشروط والأحكام</a>
+    <a href="/refund-policy">سياسة الاسترداد</a>
+    <a href="/contact">تواصل معنا</a>
+  </div>
+  <p class="f-copy">© 2025 Seller Circle. جميع الحقوق محفوظة.</p>
+</footer>
+
+<!-- ══════════════ WHATSAPP ══════════════ -->
+<a href="https://wa.me/201000000000" class="wa-btn" target="_blank" rel="noopener" aria-label="واتساب">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// ── COUNTDOWN ──
+(function(){
+  var KEY = 'sc_v2_deadline';
+  var stored = localStorage.getItem(KEY);
+  var deadline = stored ? parseInt(stored) : Date.now() + 3*24*60*60*1000;
+  if (!stored) localStorage.setItem(KEY, deadline);
+
+  function pad(n){ return String(n).padStart(2,'0') }
+
+  function tick(){
+    var diff = Math.max(0, deadline - Date.now());
+    var d = Math.floor(diff/86400000); diff %= 86400000;
+    var h = Math.floor(diff/3600000);  diff %= 3600000;
+    var m = Math.floor(diff/60000);    diff %= 60000;
+    var s = Math.floor(diff/1000);
+
+    ['d','h','m','s'].forEach(function(k,i){
+      var v = [d,h,m,s][i];
+      var el1 = document.getElementById('cd-'+k);
+      var el2 = document.getElementById('cd-'+k+'2');
+      if(el1) el1.textContent = pad(v);
+      if(el2) el2.textContent = pad(v);
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    var item = q.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = '0';
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      var a = item.querySelector('.faq-a');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+// ── CAROUSEL DOTS ──
+(function(){
+  var track = document.getElementById('carTrack');
+  var dots  = document.querySelectorAll('#carDots .dot');
+  if(!track || !dots.length) return;
+  track.addEventListener('scroll', function(){
+    var idx = Math.round(track.scrollLeft / (track.firstElementChild.offsetWidth + 12));
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+  }, {passive:true});
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كورساتي — Seller Circle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#FF9900;--black:#0F1111;--dark:#131921;--dark2:#1C2730;--dark3:#232F3E;--white:#fff;--gray:#8B949E;--green:#4ade80;--border:rgba(255,153,0,0.18)}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);direction:rtl;min-height:100vh}
+
+/* NAV */
+nav{background:rgba(15,17,17,0.97);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:18px;font-weight:900;text-decoration:none;color:var(--white)}
+.nav-logo span{color:var(--orange)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-user{font-size:13px;color:var(--gray)}
+.nav-user strong{color:var(--white)}
+.nav-logout{font-size:12px;color:var(--gray);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:6px}
+.nav-logout:hover{color:var(--white)}
+
+/* LAYOUT */
+.page{max-width:900px;margin:0 auto;padding:30px 20px 60px}
+.welcome{margin-bottom:30px}
+.welcome h1{font-size:22px;font-weight:900;margin-bottom:4px}
+.welcome h1 span{color:var(--orange)}
+.welcome p{font-size:13px;color:var(--gray)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px}
+.stat-card{background:var(--dark2);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.stat-val{font-size:24px;font-weight:900;color:var(--orange);display:block}
+.stat-lbl{font-size:11px;color:var(--gray);margin-top:3px;display:block}
+
+/* SECTION TITLE */
+.sec-lbl{font-size:13px;font-weight:700;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+
+/* COURSE CARD */
+.course-card{background:var(--dark2);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:16px;display:flex;flex-direction:column}
+@media(min-width:580px){.course-card{flex-direction:row}}
+.course-thumb{background:linear-gradient(135deg,#131921,#1C2730);min-height:140px;display:flex;align-items:center;justify-content:center;font-size:48px;flex-shrink:0;width:100%}
+@media(min-width:580px){.course-thumb{width:180px;min-height:auto}}
+.course-info{padding:20px;flex:1}
+.course-badge{display:inline-block;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.course-title{font-size:17px;font-weight:900;margin-bottom:6px}
+.course-meta{font-size:12px;color:var(--gray);margin-bottom:14px}
+.course-meta span{margin-left:12px}
+.progress-wrap{margin-bottom:14px}
+.progress-lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--gray);margin-bottom:6px}
+.progress-bar{background:var(--dark3);border-radius:20px;height:6px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),#ffb347);border-radius:20px;transition:width 1s}
+.btn-continue{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--black);font-family:'Cairo',sans-serif;font-weight:900;font-size:14px;padding:11px 20px;border-radius:10px;text-decoration:none;transition:all .2s}
+.btn-continue:hover{background:#cc7a00}
+
+/* LOCKED CARD */
+.locked-card{background:var(--dark2);border:1px dashed var(--border);border-radius:16px;padding:24px;text-align:center;opacity:.6}
+.locked-ico{font-size:32px;margin-bottom:10px}
+.locked-title{font-size:15px;font-weight:700;margin-bottom:6px}
+.locked-sub{font-size:12px;color:var(--gray);margin-bottom:14px}
+.btn-unlock{display:inline-block;background:var(--orange);color:var(--black);font-family:'Cairo',sans-serif;font-weight:900;font-size:13px;padding:10px 20px;border-radius:10px;text-decoration:none}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:22px;left:22px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);z-index:999;text-decoration:none}
+.wa-float svg{width:26px;height:26px;fill:white}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="seller-circle-preview.html" class="nav-logo">Seller <span>Circle</span></a>
+  <div class="nav-right">
+    <span class="nav-user">أهلاً، <strong>محمد</strong></span>
+    <a href="seller-circle-login.html" class="nav-logout">تسجيل الخروج</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="welcome">
+    <h1>أهلاً بيك في <span>Seller Circle</span> 🎓</h1>
+    <p>كمّل رحلتك على أمازون — كل الكورسات والمحتوى في مكان واحد</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <span class="stat-val">0%</span>
+      <span class="stat-lbl">نسبة إتمام الكورس</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">0</span>
+      <span class="stat-lbl">دروس مكتملة</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">33</span>
+      <span class="stat-lbl">إجمالي الدروس</span>
+    </div>
+  </div>
+
+  <div class="sec-lbl">كورساتي</div>
+
+  <!-- ENROLLED COURSE -->
+  <div class="course-card">
+    <div class="course-thumb">📦</div>
+    <div class="course-info">
+      <div class="course-badge">✅ مشترك</div>
+      <div class="course-title">Seller Circle — كورس البيع على أمازون FBA</div>
+      <div class="course-meta">
+        <span>📹 33 فيديو</span>
+        <span>⏱ 10 ساعات</span>
+        <span>🌍 مصر + السعودية</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-lbl"><span>التقدم</span><span>0 من 33 درس</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+      <a href="seller-circle-course.html" class="btn-continue">▶ ابدأ الكورس</a>
+    </div>
+  </div>
+
+  <!-- LOCKED / UPSELL -->
+  <div class="locked-card">
+    <div class="locked-ico">🔒</div>
+    <div class="locked-title">Advanced Amazon Ads — قريباً</div>
+    <p class="locked-sub">كورس متقدم في الإعلانات والـ PPC — هيتاح لطلاب Seller Circle أول بأول</p>
+    <a href="https://wa.me/201030435954?text=عايز أعرف أكتر عن الكورس المتقدم" class="btn-unlock" target="_blank">أبلغني لما يتاح</a>
+  </div>
+
+</div>
+
+<a href="https://wa.me/201030435954" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+</a>
+
+</body>
+</html>

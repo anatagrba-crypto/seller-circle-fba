@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شكراً — Seller Circle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#FF9900;--black:#0F1111;--dark:#131921;--dark2:#1C2730;--dark3:#232F3E;--white:#fff;--gray:#8B949E;--green:#4ade80;--border:rgba(255,153,0,0.18)}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);direction:rtl;min-height:100vh;display:flex;flex-direction:column}
+nav{background:rgba(15,17,17,0.97);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:20px;font-weight:900;text-decoration:none;color:var(--white)}
+.nav-logo span{color:var(--orange)}
+
+.hero{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.card{background:var(--dark2);border:1px solid var(--border);border-radius:20px;padding:40px 28px;max-width:520px;width:100%;text-align:center}
+
+.check-circle{width:80px;height:80px;background:rgba(74,222,128,0.12);border:2px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:36px}
+.ty-title{font-size:26px;font-weight:900;margin-bottom:8px}
+.ty-title span{color:var(--orange)}
+.ty-sub{font-size:14px;color:var(--gray);margin-bottom:28px;line-height:1.8}
+
+.steps{text-align:right;margin-bottom:28px}
+.step{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.step:last-child{border-bottom:none}
+.step-ico{font-size:22px;flex-shrink:0;margin-top:2px}
+.step-text h4{font-size:14px;font-weight:700;margin-bottom:3px}
+.step-text p{font-size:12px;color:var(--gray);line-height:1.6}
+
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-family:'Cairo',sans-serif;font-weight:900;font-size:16px;padding:16px;border-radius:12px;text-decoration:none;margin-bottom:12px;transition:all .2s}
+.btn-wa:hover{background:#1da851}
+.btn-wa svg{width:22px;height:22px;fill:white;flex-shrink:0}
+.btn-login{display:block;background:var(--dark3);color:var(--gray);font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;padding:13px;border-radius:12px;text-decoration:none;border:1px solid var(--border);transition:all .2s}
+.btn-login:hover{color:var(--white);border-color:rgba(255,255,255,.3)}
+
+.timer-note{font-size:12px;color:var(--gray);margin-top:16px;padding:10px;background:rgba(255,153,0,0.06);border:1px solid rgba(255,153,0,0.15);border-radius:8px}
+.timer-note strong{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="seller-circle-preview.html" class="nav-logo">Seller <span>Circle</span></a>
+</nav>
+
+<div class="hero">
+  <div class="card">
+    <div class="check-circle">✅</div>
+    <div class="ty-title">شكراً على <span>اشتراكك!</span></div>
+    <p class="ty-sub">طلبك وصلنا — هتتواصل معك خلال ساعة لتأكيد الدفع وتفعيل اشتراكك</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-ico">📸</div>
+        <div class="step-text">
+          <h4>ابعتلنا صورة إيصال الدفع</h4>
+          <p>على واتساب على الرقم 01030435954 مع اسمك والإيميل اللي سجّلت بيه</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-ico">⚡</div>
+        <div class="step-text">
+          <h4>تفعيل الاشتراك</h4>
+          <p>هنفعّل حسابك خلال ساعة واحدة من استلام الإيصال — حتى في الإجازات</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-ico">🎓</div>
+        <div class="step-text">
+          <h4>ابدأ تتعلم فوراً</h4>
+          <p>هتوصلك رسالة تأكيد على إيميلك وتقدر تدخل الكورس من أي جهاز</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/201030435954?text=السلام عليكم، دفعت اشتراك Seller Circle وبعتلكم الإيصال. اسمي: " class="btn-wa" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+      ابعت الإيصال على واتساب
+    </a>
+    <a href="seller-circle-login.html" class="btn-login">عندي حساب بالفعل — سجّل دخولي</a>
+
+    <div class="timer-note">⏰ بعد تأكيد الدفع، هتوصلك رسالة تفعيل على <strong>إيميلك</strong> خلال ساعة</div>
+  </div>
+</div>
+
+</body>
+</html>

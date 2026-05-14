@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /pages/dashboard.html
+Disallow: /pages/course.html
+Disallow: /dashboard
+Disallow: /course
+
+Sitemap: https://seller-circle.vercel.app/sitemap.xml

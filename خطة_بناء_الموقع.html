@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة بناء موقع كورسات الأمازون</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #1a1a2e;
+    line-height: 1.7;
+    direction: rtl;
+  }
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #1E3A5F 0%, #2E75B6 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 40px;
+  }
+  .cover h1 { font-size: 2.8em; margin-bottom: 12px; }
+  .cover p { font-size: 1.2em; opacity: 0.9; margin-bottom: 8px; }
+  .cover .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 6px 20px;
+    margin: 6px;
+    font-size: 0.95em;
+  }
+  .cover-badges { margin-top: 20px; }
+
+  /* Navigation TOC */
+  .toc {
+    background: white;
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    padding: 28px 35px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  }
+  .toc h2 { color: #1E3A5F; font-size: 1.3em; margin-bottom: 15px; border-bottom: 2px solid #2E75B6; padding-bottom: 8px; }
+  .toc ol { padding-right: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: #2E75B6; text-decoration: none; font-size: 1em; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* Main container */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* Section */
+  .section {
+    background: white;
+    border-radius: 12px;
+    padding: 32px 35px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid #2E75B6;
+  }
+  .section-num {
+    background: #1E3A5F;
+    color: white;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1em; font-weight: bold;
+    flex-shrink: 0;
+  }
+  .section h2 { color: #1E3A5F; font-size: 1.5em; }
+  .section h3 { color: #2E75B6; font-size: 1.15em; margin: 18px 0 10px; }
+  .section h4 { color: #1E3A5F; font-size: 1em; margin: 14px 0 8px; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.95em; }
+  th {
+    background: #1E3A5F; color: white;
+    padding: 10px 14px; text-align: right;
+    font-weight: 600;
+  }
+  td { padding: 9px 14px; border-bottom: 1px solid #e8ecf0; text-align: right; }
+  tr:nth-child(even) { background: #f7f9fc; }
+  tr:hover { background: #eef2f7; }
+  .td-center { text-align: center; }
+
+  /* Badges / tags */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.82em;
+    font-weight: 600;
+  }
+  .tag-green { background: #e6f4ea; color: #1e7e34; }
+  .tag-red { background: #fde8e8; color: #c0392b; }
+  .tag-blue { background: #e8f0fe; color: #1E3A5F; }
+  .tag-orange { background: #fff3e0; color: #e65100; }
+
+  /* Alert boxes */
+  .alert {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .alert-tip { background: #e8f5e9; border-right: 4px solid #4caf50; }
+  .alert-warn { background: #fff8e1; border-right: 4px solid #ff9800; }
+  .alert-danger { background: #ffebee; border-right: 4px solid #f44336; }
+  .alert-info { background: #e3f2fd; border-right: 4px solid #2196f3; }
+  .alert-icon { font-size: 1.4em; flex-shrink: 0; }
+  .alert p { margin: 0; font-size: 0.95em; }
+
+  /* Steps */
+  .steps { counter-reset: step; }
+  .step {
+    display: flex; gap: 16px;
+    margin-bottom: 18px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    padding: 16px 20px;
+    border-right: 4px solid #2E75B6;
+  }
+  .step-num {
+    background: #2E75B6; color: white;
+    width: 32px; height: 32px; min-width: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.95em;
+  }
+  .step-content h4 { color: #1E3A5F; margin-bottom: 6px; }
+  .step-content p, .step-content ul { font-size: 0.93em; color: #444; }
+  .step-content ul { padding-right: 18px; margin-top: 6px; }
+  .step-content li { margin: 3px 0; }
+
+  /* Checklist */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 8px 14px;
+    border-bottom: 1px solid #eee;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .checklist li::before {
+    content: "☐";
+    font-size: 1.2em;
+    color: #2E75B6;
+    flex-shrink: 0;
+  }
+  .checklist li:last-child { border-bottom: none; }
+
+  /* Landing page sections grid */
+  .lp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .lp-card {
+    background: #f0f4f8;
+    border-radius: 10px;
+    padding: 16px;
+    border-top: 3px solid #2E75B6;
+  }
+  .lp-card h4 { color: #1E3A5F; font-size: 0.95em; margin-bottom: 6px; }
+  .lp-card p { font-size: 0.88em; color: #555; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-right: 30px; }
+  .timeline::before {
+    content: '';
+    position: absolute; right: 10px; top: 0; bottom: 0;
+    width: 2px; background: #2E75B6;
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 16px;
+    background: #f7f9fc; border-radius: 8px; padding: 14px 18px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute; right: -24px; top: 18px;
+    width: 12px; height: 12px;
+    background: #2E75B6; border-radius: 50%;
+    border: 2px solid white;
+  }
+  .timeline-item .day { color: #2E75B6; font-weight: bold; font-size: 0.9em; }
+  .timeline-item h4 { color: #1E3A5F; margin: 4px 0; }
+  .timeline-item p { font-size: 0.88em; color: #666; }
+
+  /* Cost box */
+  .cost-box {
+    background: linear-gradient(135deg, #1E3A5F, #2E75B6);
+    color: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin: 14px 0;
+  }
+  .cost-box .amount { font-size: 2.2em; font-weight: bold; }
+  .cost-box .label { opacity: 0.85; font-size: 0.95em; }
+
+  /* Protection layers */
+  .protection-layers { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+  .layer {
+    display: flex; align-items: center; gap: 12px;
+    background: #f0f4f8; border-radius: 8px; padding: 10px 16px;
+  }
+  .layer-badge {
+    background: #1E3A5F; color: white;
+    width: 28px; height: 28px; min-width: 28px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.8em; font-weight: bold;
+  }
+  .layer-info h4 { font-size: 0.92em; color: #1E3A5F; }
+  .layer-info p { font-size: 0.84em; color: #666; margin: 0; }
+
+  /* Competitor comparison highlight */
+  .vs-winner { background: #e8f5e9 !important; font-weight: bold; }
+  .vs-loser td:nth-child(2) { color: #c0392b; }
+
+  /* Print */
+  @media print {
+    body { background: white; }
+    .section { box-shadow: none; border: 1px solid #ddd; }
+  }
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 1.8em; }
+    .lp-grid { grid-template-columns: 1fr; }
+    .section { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>🚀 خطة بناء موقع كورسات الأمازون</h1>
+  <p>الدليل الشامل من الصفر حتى الإطلاق</p>
+  <p style="opacity:0.75; font-size:0.9em;">نسخة 1.0 — أبريل 2026</p>
+  <div class="cover-badges">
+    <span class="badge">WordPress + TutorLMS</span>
+    <span class="badge">Paymob مصري</span>
+    <span class="badge">Bunny.net حماية</span>
+    <span class="badge">Google Login</span>
+    <span class="badge">bbPress كوميونتي</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>📋 محتويات الخطة</h2>
+  <ol>
+    <li><a href="#s1">رؤية المشروع والميزة التنافسية</a></li>
+    <li><a href="#s2">الـ Tech Stack الكامل</a></li>
+    <li><a href="#s3">التكاليف التفصيلية</a></li>
+    <li><a href="#s4">خطة البناء خطوة بخطوة (9 خطوات)</a></li>
+    <li><a href="#s5">استراتيجية حماية الفيديو الكاملة</a></li>
+    <li><a href="#s6">الـ Landing Page الاحترافية (10 أقسام)</a></li>
+    <li><a href="#s7">مرجعيات مواقع الكورسات العالمية</a></li>
+    <li><a href="#s8">استراتيجية SEO</a></li>
+    <li><a href="#s9">قائمة التحقق قبل الإطلاق</a></li>
+    <li><a href="#s10">الجدول الزمني</a></li>
+    <li><a href="#s11">الخطوات الفورية التالية</a></li>
+  </ol>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1: VISION -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2>رؤية المشروع والميزة التنافسية</h2>
+  </div>
+
+  <p>موقع كورسات متكامل لبيع كورسات الأمازون FBA باللغة العربية، مع نظام حماية كامل للمحتوى وتجربة مستخدم احترافية تفوق المنافسين.</p>
+
+  <h3>🗺️ رحلة المستخدم الكاملة</h3>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><h4>يدخل الـ Landing Page</h4><p>يصل إلى صفحة بيع احترافية مع Social Proof</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><h4>يضغط "اشتري الكورس الآن"</h4><p>CTA واضح وجذاب</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><h4>يسجل بحساب Google (كليك واحد)</h4><p>لا passwords معقدة — Google OAuth فوري</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><h4>يدفع عبر Paymob</h4><p>فيزا / فوري / محافظ إلكترونية — كل وسائل الدفع المصرية</p></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><h4>تفعيل تلقائي فوري</h4><p>بعد الدفع مباشرة يصله إيميل الترحيب ويدخل الكورس</p></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-content"><h4>يشاهد الفيديوهات المحمية</h4><p>Bunny.net — لا تحميل، لا مشاركة، لا سرقة</p></div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-content"><h4>يتفاعل في الكوميونتي</h4><p>يسأل ونرد عليه في bbPress المدمج في الموقع</p></div></div>
+  </div>
+
+  <h3>⚔️ الميزة التنافسية على المنافسين</h3>
+  <table>
+    <tr><th>الميزة</th><th>موقعك ✅</th><th>معاذ عصفور (Shopify)</th><th>byshahawy (GoDaddy)</th></tr>
+    <tr class="vs-winner"><td>حماية الفيديو</td><td>Bunny.net محمي 100%</td><td><span class="tag tag-red">YouTube مكشوف!</span></td><td><span class="tag tag-red">YouTube مكشوف!</span></td></tr>
+    <tr><td>LMS متكامل</td><td><span class="tag tag-green">✅ TutorLMS</span></td><td><span class="tag tag-red">❌ لا يوجد</span></td><td><span class="tag tag-red">❌ لا يوجد</span></td></tr>
+    <tr><td>تتبع تقدم الطالب</td><td><span class="tag tag-green">✅ نعم</span></td><td><span class="tag tag-red">❌ لا</span></td><td><span class="tag tag-red">❌ لا</span></td></tr>
+    <tr><td>كوميونتي مدمجة</td><td><span class="tag tag-green">✅ bbPress</span></td><td><span class="tag tag-red">❌ لا يوجد</span></td><td><span class="tag tag-red">❌ لا يوجد</span></td></tr>
+    <tr><td>اختبارات وشهادات</td><td><span class="tag tag-green">✅ نعم</span></td><td><span class="tag tag-red">❌ لا</span></td><td><span class="tag tag-red">❌ لا</span></td></tr>
+    <tr><td>التكلفة الشهرية</td><td><span class="tag tag-green">~500 ج</span></td><td><span class="tag tag-red">~2,900 ج</span></td><td><span class="tag tag-orange">~390 ج</span></td></tr>
+  </table>
+</div>
+
+<!-- SECTION 2: TECH STACK -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2>الـ Tech Stack الكامل</h2>
+  </div>
+  <table>
+    <tr><th>الطبقة</th><th>الأداة</th><th>الوظيفة</th><th>التكلفة</th></tr>
+    <tr><td>CMS</td><td><strong>WordPress</strong></td><td>قلب الموقع</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>LMS</td><td><strong>TutorLMS Free</strong></td><td>إدارة الكورسات والطلاب</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>Page Builder</td><td><strong>Elementor Free</strong></td><td>تصميم الـ Landing Page</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>Google Login</td><td><strong>Nextend Social Login</strong></td><td>تسجيل بـ Google OAuth</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>بوابة الدفع</td><td><strong>Paymob + WooCommerce</strong></td><td>دفع إلكتروني مصري كامل</td><td><span class="tag tag-blue">% من البيع</span></td></tr>
+    <tr><td>حماية الفيديو</td><td><strong>Bunny.net Stream</strong></td><td>تشفير وحماية الفيديو</td><td><span class="tag tag-orange">~$2-5/شهر</span></td></tr>
+    <tr><td>كوميونتي</td><td><strong>bbPress</strong></td><td>منتدى الطلاب المدمج</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>كوبونات</td><td><strong>WooCommerce Coupons</strong></td><td>خصومات وعروض</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>SEO</td><td><strong>Yoast SEO</strong></td><td>تحسين محركات البحث</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>سرعة الموقع</td><td><strong>LiteSpeed Cache</strong></td><td>تسريع تلقائي مع Hostinger</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>الاستضافة</td><td><strong>Hostinger Business</strong></td><td>سيرفر الموقع</td><td><span class="tag tag-orange">~$8/شهر</span></td></tr>
+    <tr><td>CDN + حماية</td><td><strong>Cloudflare Free</strong></td><td>سرعة عالمية وحماية DDoS</td><td><span class="tag tag-green">مجاني</span></td></tr>
+    <tr><td>نسخ احتياطي</td><td><strong>UpdraftPlus</strong></td><td>نسخ تلقائي يومي</td><td><span class="tag tag-green">مجاني</span></td></tr>
+  </table>
+</div>
+
+<!-- SECTION 3: COSTS -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2>التكاليف التفصيلية</h2>
+  </div>
+
+  <h3>💰 التكاليف الشهرية المتكررة</h3>
+  <table>
+    <tr><th>البند</th><th>الأداة</th><th>بالدولار</th><th>بالجنيه</th></tr>
+    <tr><td>الاستضافة</td><td>Hostinger Business</td><td>$8</td><td>~390 ج</td></tr>
+    <tr><td>حماية الفيديو</td><td>Bunny.net Stream</td><td>$2-5</td><td>~100-250 ج</td></tr>
+    <tr><td>الدومين</td><td>Cloudflare Registrar</td><td>$1</td><td>~50 ج</td></tr>
+    <tr><td>باقي الأدوات</td><td>كلها مجانية</td><td>$0</td><td>مجاني ✅</td></tr>
+    <tr style="font-weight:bold; background:#e8f5e9;"><td>الإجمالي الشهري</td><td></td><td>$11-14</td><td>~540-690 ج</td></tr>
+  </table>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 20px 0;">
+    <div class="cost-box">
+      <div class="amount">~600 ج</div>
+      <div class="label">التكلفة الشهرية</div>
+    </div>
+    <div class="cost-box" style="background: linear-gradient(135deg, #1a7a40, #27ae60);">
+      <div class="amount">مجاني</div>
+      <div class="label">معظم الأدوات</div>
+    </div>
+    <div class="cost-box" style="background: linear-gradient(135deg, #c0392b, #e74c3c);">
+      <div class="amount">~2,900 ج</div>
+      <div class="label">تكلفة المنافس شهرياً</div>
+    </div>
+  </div>
+
+  <h3>📊 تكلفة Paymob على حسب مبيعاتك</h3>
+  <table>
+    <tr><th>المبيعات الشهرية</th><th>العمولة ~2.5%</th><th>صافي الإيراد</th></tr>
+    <tr><td>5,000 ج</td><td>125 ج</td><td><strong>4,875 ج</strong></td></tr>
+    <tr><td>10,000 ج</td><td>250 ج</td><td><strong>9,750 ج</strong></td></tr>
+    <tr><td>20,000 ج</td><td>500 ج</td><td><strong>19,500 ج</strong></td></tr>
+    <tr><td>50,000 ج</td><td>1,250 ج</td><td><strong>48,750 ج</strong></td></tr>
+  </table>
+
+  <div class="alert alert-tip">
+    <span class="alert-icon">💡</span>
+    <p>مقارنة بـ Teachable أو Kajabi اللي بياخدوا $99/شهر + عمولة، موقعك بـ WordPress بيكلفك أقل بكتير مع تحكم أكتر.</p>
+  </div>
+</div>
+
+<!-- SECTION 4: BUILD STEPS -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <h2>خطة البناء خطوة بخطوة</h2>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>🏠 شراء الاستضافة والدومين — اليوم 1</h4>
+        <ul>
+          <li>اذهب إلى: <strong>hostinger.com</strong></li>
+          <li>اختر: <strong>Business Web Hosting</strong> (~$8/شهر)</li>
+          <li>اختر دومين: مثال <em>your-name-amazon.com</em></li>
+          <li>الدفع: بطاقة فيزا أو PayPal</li>
+          <li>Hostinger بيدي SSL مجاناً وتثبيت WordPress بكليك واحد</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>⚙️ تثبيت WordPress — اليوم 1</h4>
+        <ul>
+          <li>دخل hPanel (لوحة Hostinger)</li>
+          <li>اضغط <strong>Auto Installer > WordPress</strong></li>
+          <li>أدخل اسم الموقع والـ Admin Password</li>
+          <li>خلال دقيقتين الموقع شغال على: <em>yourdomain.com/wp-admin</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>🔌 تثبيت الـ Plugins الأساسية — اليوم 2</h4>
+        <table>
+          <tr><th>الـ Plugin</th><th>الوظيفة</th></tr>
+          <tr><td>TutorLMS</td><td>منصة الكورسات الكاملة</td></tr>
+          <tr><td>WooCommerce</td><td>البيع والدفع</td></tr>
+          <tr><td>Elementor</td><td>تصميم الصفحات بدون كود</td></tr>
+          <tr><td>Nextend Social Login</td><td>تسجيل بـ Google</td></tr>
+          <tr><td>Paymob for WooCommerce</td><td>بوابة الدفع المصرية</td></tr>
+          <tr><td>bbPress</td><td>الكوميونتي المدمجة</td></tr>
+          <tr><td>Yoast SEO</td><td>تحسين محركات البحث</td></tr>
+          <tr><td>UpdraftPlus</td><td>النسخ الاحتياطي التلقائي</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>📚 إعداد TutorLMS وهيكل الكورس — اليوم 3</h4>
+        <ul>
+          <li>TutorLMS > Settings > فعّل WooCommerce كـ eCommerce Engine</li>
+          <li>TutorLMS > Courses > Add New > أضف اسم الكورس + الوصف + الصورة</li>
+          <li>أضف الوحدات والدروس (الفيديو هيتربط بعدين من Bunny)</li>
+          <li>حدد سعر الكورس عبر WooCommerce Product</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>🔒 إعداد Bunny.net لحماية الفيديو — اليوم 4</h4>
+        <ul>
+          <li>سجل على: <strong>bunny.net</strong> > Stream > Add Library</li>
+          <li>في Allowed Referers: أضف دومينك فقط</li>
+          <li>فعّل: <strong>DRM Protection + Hotlink Protection</strong></li>
+          <li>ارفع كل الفيديوهات</li>
+          <li>انسخ Embed Code كل فيديو وضعه في درسه في TutorLMS</li>
+        </ul>
+        <div class="alert alert-danger" style="margin-top:8px;">
+          <span class="alert-icon">🔴</span>
+          <p>لا ترفع الفيديوهات مباشرة على WordPress — استخدم Bunny.net فقط!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h4>💳 ربط Paymob — اليوم 5</h4>
+        <ul>
+          <li>سجل على: <strong>paymob.com</strong> وأرسل المستندات (بطاقة + بيانات بنكية)</li>
+          <li>التفعيل بياخد 2-5 أيام عمل</li>
+          <li>بعد الموافقة: لوحة Paymob > Settings > Integrations > انسخ API Key + Integration ID</li>
+          <li>WordPress: WooCommerce > Settings > Payments > Paymob > أدخل البيانات</li>
+          <li>اعمل معاملة تجريبية بـ Test Mode قبل الـ Live</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h4>🔑 إعداد Google Login — اليوم 5</h4>
+        <ul>
+          <li>اذهب إلى: <strong>console.cloud.google.com</strong> > New Project</li>
+          <li>فعّل OAuth 2.0 API</li>
+          <li>Credentials > OAuth Client ID > Web Application</li>
+          <li>في Authorized redirect URIs: <em>yourdomain.com/?oauth=1</em></li>
+          <li>انسخ Client ID + Client Secret</li>
+          <li>WordPress: Nextend Social Login > Google > أدخل البيانات</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <h4>💬 إعداد الكوميونتي bbPress — اليوم 6</h4>
+        <ul>
+          <li>Forums > Add New > أنشئ الأقسام: أسئلة الكورس / نجاحات / موارد</li>
+          <li>في الإعدادات: اشترط Login للمشاركة</li>
+          <li>فعّل Email Notifications للردود</li>
+          <li>اربط الكوميونتي بصفحة الكورس</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">9</div>
+      <div class="step-content">
+        <h4>🎨 تصميم الـ Landing Page بـ Elementor — اليوم 7-10</h4>
+        <ul>
+          <li>Pages > Add New > ابدأ بـ Elementor Template للكورسات</li>
+          <li>اتبع هيكل الـ 10 أقسام في القسم السادس من هذا الدليل</li>
+          <li>أضف Countdown Timer للعروض المؤقتة</li>
+          <li>اضمن أن الصفحة تشتغل 100% على الموبايل</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 5: VIDEO PROTECTION -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <h2>استراتيجية حماية الفيديو الكاملة</h2>
+  </div>
+
+  <div class="alert alert-danger">
+    <span class="alert-icon">⚠️</span>
+    <p><strong>ميزتك التنافسية الأهم:</strong> المنافسون يستخدمون YouTube وفيديوهاتهم مكشوفة تماماً. أنت ستستخدم Bunny.net مع DRM Protection.</p>
+  </div>
+
+  <h3>🛡️ طبقات الحماية المتعددة</h3>
+  <div class="protection-layers">
+    <div class="layer"><div class="layer-badge">1</div><div class="layer-info"><h4>Bunny.net DRM Encryption</h4><p>الفيديو مشفر — تحميله مستحيل حتى مع أدوات التحميل</p></div></div>
+    <div class="layer"><div class="layer-badge">2</div><div class="layer-info"><h4>Allowed Referers</h4><p>الفيديو يشتغل فقط من دومينك — لو حاول يفتحه في موقع تاني لن يعمل</p></div></div>
+    <div class="layer"><div class="layer-badge">3</div><div class="layer-info"><h4>TutorLMS Enrollment Check</h4><p>ما يشوفش الفيديو إلا لو اشترى الكورس</p></div></div>
+    <div class="layer"><div class="layer-badge">4</div><div class="layer-info"><h4>WordPress Login Required</h4><p>لا وصول بدون حساب مسجّل</p></div></div>
+    <div class="layer"><div class="layer-badge">5</div><div class="layer-info"><h4>Cloudflare Bot Protection</h4><p>حماية من الهجمات الآلية</p></div></div>
+    <div class="layer"><div class="layer-badge">6</div><div class="layer-info"><h4>SSL / HTTPS</h4><p>تشفير الاتصال بالكامل</p></div></div>
+  </div>
+
+  <h3>⚙️ إعدادات Bunny.net المهمة</h3>
+  <table>
+    <tr><th>الإعداد</th><th>الحالة المطلوبة</th><th>السبب</th></tr>
+    <tr><td>Secure Token Authentication</td><td><span class="tag tag-green">فعّل ✅</span></td><td>يمنع مشاركة روابط الفيديو</td></tr>
+    <tr><td>Hotlink Protection</td><td><span class="tag tag-green">فعّل ✅</span></td><td>يمنع التضمين في مواقع أخرى</td></tr>
+    <tr><td>DRM Protection</td><td><span class="tag tag-green">فعّل ✅</span></td><td>تشفير كامل للفيديو</td></tr>
+    <tr><td>Allowed Referers</td><td><span class="tag tag-green">دومينك فقط</span></td><td>يمنع التشغيل خارج موقعك</td></tr>
+    <tr><td>Watermark</td><td><span class="tag tag-green">فعّل ✅</span></td><td>يردع المشاركة غير المصرح بها</td></tr>
+    <tr><td>Right-click</td><td><span class="tag tag-red">عطّل ❌</span></td><td>يمنع محاولة حفظ الفيديو</td></tr>
+  </table>
+</div>
+
+<!-- SECTION 6: LANDING PAGE -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <h2>الـ Landing Page الاحترافية — 10 أقسام</h2>
+  </div>
+
+  <p style="margin-bottom:16px;">بناءً على تحليل أفضل مواقع الكورسات عالمياً، دي أفضل هيكل مثبت للـ Landing Page بيحول الزوار لطلاب.</p>
+
+  <div class="lp-grid">
+
+    <div class="lp-card">
+      <h4>1️⃣ Hero Section — أول ما يشوفه الزائر</h4>
+      <p>Headline قوية + Sub-headline بوعد محدد + فيديو تشويقي 30 ثانية + زر CTA كبير + Social Proof صغيرة ("500+ طالب")</p>
+    </div>
+
+    <div class="lp-card">
+      <h4>2️⃣ Problem Section — المشكلة</h4>
+      <p>اعترف بالمشكلة التي يعانيها جمهورك. مثال: "بتدور على مصدر دخل إضافي بس مش عارف تبدأ من فين؟" — 3-4 نقاط ألم محددة</p>
+    </div>
+
+    <div class="lp-card">
+      <h4>3️⃣ Solution Section — الكورس هو الحل</h4>
+      <p>قدم نفسك وخبرتك بإيجاز + اشرح كيف الكورس يحل المشكلة + صورة احترافية ليك</p>
+    </div>
+
+    <div class="lp-card">
+      <h4>4️⃣ What's Inside — محتوى الكورس</h4>
+      <p>عدد الساعات والوحدات والدروس + أبرز 5-7 مواضيع رئيسية يتعلمها الطالب</p>
+    </div>
+
+    <div class="lp-card" style="border-top-color: #e74c3c;">
+      <h4>5️⃣ Results & Testimonials — ⭐ الأهم!</h4>
+      <p>3-5 شهادات حقيقية بأرقام محددة ("ربحت 5,000 دولار في 3 شهور") + صور حقيقية للطلاب</p>
+    </div>
+
+    <div class="lp-card">
+      <h4>6️⃣ Curriculum — المنهج التفصيلي</h4>
+      <p>Accordion لكل وحدة + اسم كل درس + مدة كل وحدة — الشفافية تزيد الثقة</p>
+    </div>
+
+    <div class="lp-card">
+      <h4>7️⃣ Who Is This For — لمين الكورس</h4>
+      <p>قائمة من يستفيد + قائمة من لا يناسبه (تزيد الثقة بشكل كبير!)</p>
+    </div>
+
+    <div class="lp-card" style="border-top-color: #27ae60;">
+      <h4>8️⃣ Pricing Section — السعر والضمان</h4>
+      <p>السعر واضح + ما تحصل عليه + Countdown Timer للعروض + ضمان استرداد 14 يوم + CTA كبير مرة تانية</p>
+    </div>
+
+    <div class="lp-card">
+      <h4>9️⃣ FAQ — 8-10 سؤال شائع</h4>
+      <p>أجب على كل مخاوف العميل قبل ما يسأل — يقلل التردد ويزيد التحويل</p>
+    </div>
+
+    <div class="lp-card" style="border-top-color: #1E3A5F;">
+      <h4>🔟 Final CTA — الدفعة الأخيرة</h4>
+      <p>ملخص قصير للقيمة + زر الشراء النهائي + تذكير بالـ Guarantee</p>
+    </div>
+
+  </div>
+
+  <div class="alert alert-tip" style="margin-top:20px;">
+    <span class="alert-icon">💡</span>
+    <p><strong>نصيحة ذهبية:</strong> الـ Testimonials هي أقوى عنصر في صفحتك. اجمع شهادات من أي طلاب جربوا محتواك — حتى لو مجاناً في البداية — قبل الإطلاق الرسمي.</p>
+  </div>
+</div>
+
+<!-- SECTION 7: REFERENCES -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <h2>مرجعيات مواقع الكورسات للإلهام</h2>
+  </div>
+
+  <h3>🌍 مواقع عالمية — تعلم منها في التصميم</h3>
+  <table>
+    <tr><th>الموقع</th><th>ما تتعلمه منه</th></tr>
+    <tr><td><strong>digitalcourseacademy.com</strong></td><td>استخدام الأرقام الكبيرة ($120M) لبناء Authority</td></tr>
+    <tr><td><strong>videorankingacademy.com</strong></td><td>إبراز خبرة المدرب + Social Proof (4.2M subscribers)</td></tr>
+    <tr><td><strong>unbounce.com/landing-page-examples</strong></td><td>مكتبة ضخمة من Landing Pages ناجحة ومحللة</td></tr>
+    <tr><td><strong>leadpages.com/blog/course-landing-page</strong></td><td>هياكل جاهزة لصفحات الكورسات</td></tr>
+    <tr><td><strong>swipepages.com/blog</strong></td><td>أفضل 12 مثال لـ Landing Pages 2026</td></tr>
+    <tr><td><strong>learnworlds.com/blog</strong></td><td>دليل شامل لصفحات الكورسات المحوِّلة</td></tr>
+  </table>
+
+  <h3>🔑 أهم مبادئ التصميم المثبتة</h3>
+  <table>
+    <tr><th>المبدأ</th><th>التطبيق</th></tr>
+    <tr><td>الوضوح فوق الإبداع</td><td>Headline واضح ومباشر — لا غموض ولا كلام كبير</td></tr>
+    <tr><td>الأرقام المحددة تبيع</td><td>"ربحت 5,247 دولار" أحسن من "ربحت الكثير"</td></tr>
+    <tr><td>ضمان الاسترداد يزيل الخوف</td><td>14-30 يوم Guarantee يزيد المبيعات 20-30%</td></tr>
+    <tr><td>Urgency حقيقية فقط</td><td>Countdown Timer للعروض الحقيقية فقط — لا تكذب</td></tr>
+    <tr><td>الموبايل أولاً</td><td>70%+ من زوارك على موبايل — اختبر على الشاشة الصغيرة</td></tr>
+    <tr><td>CTA واضح ومتكرر</td><td>زر الشراء يظهر 3-4 مرات على طول الصفحة</td></tr>
+  </table>
+</div>
+
+<!-- SECTION 8: SEO -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <h2>استراتيجية SEO للموقع</h2>
+  </div>
+
+  <h3>🎯 الـ Keywords المستهدفة</h3>
+  <table>
+    <tr><th>الكلمة المفتاحية</th><th>الأولوية</th><th>الاستخدام</th></tr>
+    <tr><td>كورس أمازون FBA بالعربي</td><td><span class="tag tag-red">عالية جداً</span></td><td>H1 + Title + Meta</td></tr>
+    <tr><td>تعلم البيع على أمازون</td><td><span class="tag tag-red">عالية</span></td><td>H2 + محتوى الصفحة</td></tr>
+    <tr><td>أمازون FBA للمبتدئين عربي</td><td><span class="tag tag-orange">عالية</span></td><td>Subheadings + مقالات Blog</td></tr>
+    <tr><td>كيف أبيع على أمازون من مصر</td><td><span class="tag tag-blue">متوسطة</span></td><td>مقالات Blog + FAQ</td></tr>
+    <tr><td>ربح من أمازون بالعربي</td><td><span class="tag tag-blue">متوسطة</span></td><td>محتوى إضافي</td></tr>
+  </table>
+
+  <h3>📝 On-Page SEO Checklist</h3>
+  <ul class="checklist">
+    <li>Title Tag: الكلمة المفتاحية في أول 60 حرف</li>
+    <li>Meta Description: 150-160 حرف مع CTA واضح</li>
+    <li>H1 واحد فقط يحتوي الـ Keyword الرئيسية</li>
+    <li>URL قصير: yourdomain.com/amazon-fba-course</li>
+    <li>صور بـ Alt Text وصفية بالعربي</li>
+    <li>Schema Markup لصفحة الكورس (Course + FAQ Schema)</li>
+    <li>Internal Linking بين صفحات الموقع</li>
+    <li>Page Speed أقل من 3 ثواني (اختبر على PageSpeed Insights)</li>
+  </ul>
+</div>
+
+<!-- SECTION 9: CHECKLIST -->
+<div class="section" id="s9">
+  <div class="section-header">
+    <div class="section-num">9</div>
+    <h2>قائمة التحقق الكاملة قبل الإطلاق</h2>
+  </div>
+
+  <h3>⚙️ التقني</h3>
+  <ul class="checklist">
+    <li>WordPress مثبت ويعمل</li>
+    <li>SSL شهادة مفعلة (HTTPS بالكامل)</li>
+    <li>TutorLMS مثبت وإعداده مكتمل</li>
+    <li>WooCommerce مثبت ومضبوط</li>
+    <li>Elementor مثبت</li>
+    <li>Paymob مربوط ومختبر (Test Mode)</li>
+    <li>Google Login يعمل بنجاح</li>
+    <li>Bunny.net فيديوهات مرفوعة ومحمية</li>
+    <li>bbPress منتدى منشأ بأقسامه</li>
+    <li>Yoast SEO مضبوط لكل الصفحات</li>
+    <li>UpdraftPlus نسخ احتياطي يومي تلقائي</li>
+    <li>Cloudflare مفعل وDNS مضبوط</li>
+  </ul>
+
+  <h3>📄 المحتوى</h3>
+  <ul class="checklist">
+    <li>Landing Page مصممة ومكتملة بكل الأقسام العشرة</li>
+    <li>صفحة الكورس مضبوطة بالكامل</li>
+    <li>كل الفيديوهات مرفوعة على Bunny.net ومرتبطة</li>
+    <li>ترتيب الدروس منطقي ومتسلسل</li>
+    <li>وصف كل درس مكتوب</li>
+    <li>صورة الكورس احترافية (1280x720 على الأقل)</li>
+    <li>صفحة About Me مكتوبة وشخصية</li>
+    <li>Privacy Policy + Terms of Service منشورين</li>
+    <li>إيميل الترحيب مضبوط ويصل تلقائياً</li>
+    <li>FAQ مكتوب في الـ Landing Page (8-10 سؤال)</li>
+  </ul>
+
+  <h3>🧪 الاختبار</h3>
+  <ul class="checklist">
+    <li>عملية شراء كاملة مختبرة (Test Mode)</li>
+    <li>Google Login مختبر بحساب حقيقي</li>
+    <li>إيميل التفعيل وصل فوراً بعد الشراء</li>
+    <li>الطالب يقدر يشاهد الكورس بعد الشراء مباشرة</li>
+    <li>الفيديو لا يعمل خارج الموقع</li>
+    <li>الموقع يعمل على الموبايل 100%</li>
+    <li>سرعة الموقع أقل من 3 ثواني</li>
+    <li>الكوبون يعمل صح ويخصم المبلغ الصحيح</li>
+    <li>bbPress يتطلب Login للمشاركة</li>
+    <li>الـ Paymob Live Mode يعمل بعملية حقيقية صغيرة</li>
+  </ul>
+</div>
+
+<!-- SECTION 10: TIMELINE -->
+<div class="section" id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2>الجدول الزمني للبناء</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item"><div class="day">اليوم 1</div><h4>الأساسيات</h4><p>شراء Hostinger + دومين + تثبيت WordPress • الوقت: 1-2 ساعة</p></div>
+    <div class="timeline-item"><div class="day">اليوم 2</div><h4>تثبيت الأدوات</h4><p>تثبيت وإعداد كل الـ 8 Plugins الأساسية • الوقت: 2-3 ساعات</p></div>
+    <div class="timeline-item"><div class="day">اليوم 3</div><h4>هيكل الكورس</h4><p>إعداد TutorLMS + إنشاء الوحدات والدروس • الوقت: 2-3 ساعات</p></div>
+    <div class="timeline-item"><div class="day">اليوم 4</div><h4>الفيديو المحمي</h4><p>رفع الفيديوهات على Bunny.net + ربطها بالدروس • الوقت: 3-5 ساعات</p></div>
+    <div class="timeline-item"><div class="day">اليوم 5</div><h4>الدفع + Login</h4><p>ربط Paymob + إعداد Google OAuth • الوقت: 2-3 ساعات</p></div>
+    <div class="timeline-item"><div class="day">اليوم 6</div><h4>الكوميونتي + SEO</h4><p>إعداد bbPress + الكوبونات + Yoast SEO • الوقت: 2 ساعة</p></div>
+    <div class="timeline-item"><div class="day">اليوم 7-10</div><h4>Landing Page</h4><p>تصميم الصفحة الكاملة بـ Elementor • الوقت: 4-8 ساعات</p></div>
+    <div class="timeline-item"><div class="day">اليوم 11-12</div><h4>الاختبار الشامل</h4><p>اختبار كل العمليات من A إلى Z • الوقت: 2-3 ساعات</p></div>
+    <div class="timeline-item"><div class="day">اليوم 13-14</div><h4>🚀 الإطلاق</h4><p>التعديلات الأخيرة والإطلاق الرسمي • الوقت: 1-2 ساعة</p></div>
+  </div>
+
+  <div class="alert alert-tip" style="margin-top:16px;">
+    <span class="alert-icon">⏱️</span>
+    <p><strong>الوقت الإجمالي:</strong> 7-14 يوم مع مساعدة Claude خطوة بخطوة — مقارنة بـ شهور لو كنت بتعمله لوحدك.</p>
+  </div>
+</div>
+
+<!-- SECTION 11: NEXT STEPS -->
+<div class="section" id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <h2>الخطوات الفورية التالية — ابدأ دلوقتي</h2>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>🏠 سجل في Hostinger واشتري الاستضافة + الدومين</h4>
+        <ul>
+          <li>الرابط: <strong>hostinger.com</strong></li>
+          <li>اختر: Business Web Hosting</li>
+          <li>فكرة للدومين: amazon-course-arabic.com أو اسمك-amazon.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>💳 سجل في Paymob وابدأ عملية التفعيل (يأخذ وقتاً)</h4>
+        <ul>
+          <li>الرابط: <strong>paymob.com</strong></li>
+          <li>المستندات: بطاقة رقم قومي + بيانات بنكية</li>
+          <li>التفعيل: 2-5 أيام عمل — ابدأ فوراً لأنه بياخد وقت</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>🎬 سجل في Bunny.net وأنشئ Stream Library</h4>
+        <ul>
+          <li>الرابط: <strong>bunny.net</strong></li>
+          <li>اختر: Stream (مش Storage)</li>
+          <li>أنشئ Library وجهّزه لاستقبال الفيديوهات</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-info" style="margin-top: 20px;">
+    <span class="alert-icon">🤝</span>
+    <p><strong>بعد الخطوات الثلاث دي، تعالى وقولنا وهنكمل معاك خطوة بخطوة باستخدام Claude!</strong> هنكتب الكود المطلوب، نحل أي مشاكل تقنية، ونساعدك في كل تفصيلة.</p>
+  </div>
+
+</div>
+
+</div><!-- end container -->
+
+<div style="background: #1E3A5F; color: white; text-align:center; padding: 20px; font-size: 0.85em; opacity: 0.9;">
+  خطة بناء موقع كورسات الأمازون — نسخة 1.0 — أبريل 2026
+</div>
+
+</body>
+</html>

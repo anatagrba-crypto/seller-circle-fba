@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إتمام الشراء — Seller Circle FBA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#FF9900;--black:#0F1111;--dark:#131921;--dark2:#1C2730;--dark3:#232F3E;--white:#fff;--gray:#8B949E;--green:#4ade80;--border:rgba(255,153,0,0.18)}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);direction:rtl;min-height:100vh}
+nav{background:rgba(15,17,17,0.97);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:18px;font-weight:900;text-decoration:none;color:var(--white)}.logo span{color:var(--orange)}
+.page{max-width:680px;margin:0 auto;padding:40px 20px 80px}
+.checkout-title{font-size:26px;font-weight:900;margin-bottom:6px}
+.checkout-sub{font-size:13px;color:var(--gray);margin-bottom:32px}
+.order-summary{background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:28px}
+.order-summary h3{font-size:14px;font-weight:900;color:var(--orange);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.order-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:14px}
+.order-row:last-child{border-bottom:none;font-weight:900;font-size:16px;color:var(--orange)}
+.order-row span:first-child{color:var(--gray)}
+.payment-tabs{display:flex;gap:8px;margin-bottom:24px}
+.pay-tab{flex:1;padding:12px;background:var(--dark2);border:2px solid rgba(255,255,255,0.08);border-radius:12px;cursor:pointer;text-align:center;font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;color:var(--gray);transition:all .2s}
+.pay-tab.active{border-color:var(--orange);color:var(--orange);background:rgba(255,153,0,0.06)}
+.pay-panel{display:none}.pay-panel.active{display:block}
+.pay-card{background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px}
+.pay-card h3{font-size:15px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.pay-info{background:var(--dark3);border-radius:10px;padding:16px;margin-bottom:16px}
+.pay-info p{font-size:13px;color:var(--gray);margin-bottom:6px}
+.pay-number{font-size:22px;font-weight:900;color:var(--orange);letter-spacing:1px}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,153,0,0.1);border:1px solid var(--border);color:var(--orange);font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;padding:6px 14px;border-radius:8px;cursor:pointer;margin-top:8px;border:none}
+.copy-btn:active{transform:scale(.96)}
+.amount-box{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.25);border-radius:10px;padding:14px;margin-bottom:16px;text-align:center}
+.amount-box .lbl{font-size:12px;color:var(--gray);margin-bottom:4px}
+.amount-box .val{font-size:28px;font-weight:900;color:var(--green)}
+.step-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.step-item{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--gray)}
+.step-num{background:var(--orange);color:#000;font-weight:900;font-size:12px;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-family:'Cairo',sans-serif;font-weight:900;font-size:16px;padding:16px;border-radius:12px;text-decoration:none;transition:all .2s;width:100%}
+.wa-btn:hover{background:#1eb558;transform:translateY(-2px)}
+.guarantee{display:flex;align-items:center;gap:10px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.2);border-radius:10px;padding:14px;margin-top:20px;font-size:13px;color:var(--gray)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="logo">Seller <span>Circle</span></a>
+  <span style="font-size:13px;color:var(--gray)">🔒 دفع آمن</span>
+</nav>
+<div class="page">
+  <h1 class="checkout-title">إتمام الشراء 🚀</h1>
+  <p class="checkout-sub">خطوة واحدة تفصلك عن بدء رحلتك على أمازون</p>
+
+  <div class="order-summary">
+    <h3>ملخص الطلب</h3>
+    <div class="order-row"><span>Seller Circle FBA — الكورس الكامل</span><span></span></div>
+    <div class="order-row"><span>33 درس + دعم واتساب</span><span>1,997 EGP</span></div>
+    <div class="order-row"><span>خصم 50%</span><span style="color:var(--green)">- 2,000 EGP</span></div>
+    <div class="order-row"><span>الإجمالي</span><span>1,997 EGP</span></div>
+  </div>
+
+  <div class="payment-tabs">
+    <button class="pay-tab active" onclick="switchPay('vodafone',this)">📱 Vodafone Cash</button>
+    <button class="pay-tab" onclick="switchPay('instapay',this)">💳 Instapay</button>
+    <button class="pay-tab" onclick="switchPay('bank',this)">🏦 تحويل بنكي</button>
+  </div>
+
+  <!-- Vodafone Cash -->
+  <div class="pay-panel active" id="panel-vodafone">
+    <div class="pay-card">
+      <h3>📱 Vodafone Cash</h3>
+      <div class="amount-box"><div class="lbl">المبلغ المطلوب</div><div class="val">1,997 EGP</div></div>
+      <div class="pay-info">
+        <p>حوّل على رقم Vodafone Cash:</p>
+        <div class="pay-number">01030435954</div>
+        <button class="copy-btn" onclick="copyNum('01030435954')">📋 نسخ الرقم</button>
+      </div>
+      <div class="step-list">
+        <div class="step-item"><span class="step-num">1</span><span>افتح تطبيق Vodafone Cash</span></div>
+        <div class="step-item"><span class="step-num">2</span><span>اختار "تحويل أموال" وادخل الرقم 01030435954</span></div>
+        <div class="step-item"><span class="step-num">3</span><span>حوّل مبلغ 1,997 جنيه</span></div>
+        <div class="step-item"><span class="step-num">4</span><span>خد screenshot للإيصال وابعته على واتساب</span></div>
+      </div>
+      <a href="https://wa.me/201030435954?text=عملت الدفع بـ Vodafone Cash وعايز أفعّل الكورس — إيميلي:" class="wa-btn" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        ابعت الإيصال على واتساب
+      </a>
+    </div>
+  </div>
+
+  <!-- Instapay -->
+  <div class="pay-panel" id="panel-instapay">
+    <div class="pay-card">
+      <h3>💳 Instapay</h3>
+      <div class="amount-box"><div class="lbl">المبلغ المطلوب</div><div class="val">1,997 EGP</div></div>
+      <div class="pay-info">
+        <p>حوّل على Instapay Username:</p>
+        <div class="pay-number">01030435954</div>
+        <button class="copy-btn" onclick="copyNum('01030435954')">📋 نسخ الرقم</button>
+      </div>
+      <div class="step-list">
+        <div class="step-item"><span class="step-num">1</span><span>افتح تطبيق Instapay أو تطبيق البنك</span></div>
+        <div class="step-item"><span class="step-num">2</span><span>حوّل مبلغ 1,997 جنيه</span></div>
+        <div class="step-item"><span class="step-num">3</span><span>خد screenshot للإيصال وابعته على واتساب</span></div>
+      </div>
+      <a href="https://wa.me/201030435954?text=عملت الدفع بـ Instapay وعايز أفعّل الكورس — إيميلي:" class="wa-btn" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        ابعت الإيصال على واتساب
+      </a>
+    </div>
+  </div>
+
+  <!-- Bank Transfer -->
+  <div class="pay-panel" id="panel-bank">
+    <div class="pay-card">
+      <h3>🏦 تحويل بنكي</h3>
+      <div class="amount-box"><div class="lbl">المبلغ المطلوب</div><div class="val">1,997 EGP</div></div>
+      <div class="pay-info">
+        <p>اسم الحساب: محمد — Druza SPN</p>
+        <p style="margin-top:8px">تواصل معنا على واتساب للحصول على تفاصيل الحساب البنكي</p>
+      </div>
+      <a href="https://wa.me/201030435954?text=عايز بيانات التحويل البنكي للاشتراك في Seller Circle" class="wa-btn" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        اطلب بيانات التحويل البنكي
+      </a>
+    </div>
+  </div>
+
+  <div class="guarantee">
+    🛡️ <span>ضمان استرداد 14 يوم كامل — بدون أسئلة</span>
+  </div>
+</div>
+<script>
+function switchPay(name, btn) {
+  document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+function copyNum(num) {
+  navigator.clipboard.writeText(num).then(() => {
+    alert('تم نسخ الرقم: ' + num);
+  });
+}
+</script>
+</body>
+</html>

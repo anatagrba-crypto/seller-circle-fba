@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "name": "seller-circle-fba",
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.js",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/checkout", "dest": "/pages/checkout.html" },
+    { "src": "/login", "dest": "/pages/login.html" },
+    { "src": "/register", "dest": "/pages/register.html" },
+    { "src": "/dashboard", "dest": "/pages/dashboard.html" },
+    { "src": "/course", "dest": "/pages/course.html" },
+    { "src": "/thank-you", "dest": "/pages/thank-you.html" },
+    { "src": "/privacy", "dest": "/pages/privacy.html" },
+    { "src": "/terms", "dest": "/pages/terms.html" },
+    { "src": "/refund", "dest": "/pages/refund.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    }
+  ]
+}

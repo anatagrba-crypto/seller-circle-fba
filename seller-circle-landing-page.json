@@ -1,0 +1,298 @@
+{
+  "version": "0.4",
+  "title": "Seller Circle — Amazon FBA Landing Page",
+  "type": "page",
+  "page_settings": {
+    "template": "elementor_canvas",
+    "hide_title": "yes",
+    "custom_css": "*{box-sizing:border-box}:root{--orange:#FF9900;--orange-dark:#cc7a00;--black:#0F1111;--dark:#131921;--dark2:#1C2730;--dark3:#232F3E;--white:#FFFFFF;--gray:#8B949E;--border:rgba(255,153,0,0.18);--green:#4ade80;--nav-h:58px;}html{scroll-behavior:smooth}body{font-family:'Cairo',sans-serif!important;background:var(--black);color:var(--white);direction:rtl;overflow-x:hidden;line-height:1.6}.e-con,.e-con-inner{padding:0!important}nav.sc-nav{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,17,17,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}.sc-nav-logo{font-size:20px;font-weight:900;color:var(--white);letter-spacing:-0.5px;text-decoration:none}.sc-nav-logo span{color:var(--orange)}.sc-nav-right{display:flex;align-items:center;gap:10px}.sc-nav-login{color:rgba(255,255,255,.7);font-size:13px;text-decoration:none;padding:8px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.2)}.sc-nav-cta{background:var(--orange);color:var(--black);font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;padding:10px 18px;border:none;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap}.sc-nav-cta:hover{background:var(--orange-dark)}.sc-hero{background:linear-gradient(180deg,#131921 0%,#0F1111 100%);padding:calc(var(--nav-h) + 36px) 20px 60px;text-align:center}.sc-hook{display:inline-block;background:rgba(255,153,0,0.12);border:1px solid var(--orange);color:var(--orange);font-size:13px;font-weight:700;padding:7px 18px;border-radius:50px;margin-bottom:20px}.sc-h1{font-size:26px;font-weight:900;line-height:1.45;margin-bottom:14px}.sc-h1 span{color:var(--orange)}.sc-sub{font-size:15px;color:#ccc;margin-bottom:28px;line-height:1.8;max-width:520px;margin-left:auto;margin-right:auto}.sc-video-box{border-radius:14px;overflow:hidden;border:2px solid var(--border);position:relative;padding-top:56.25%;background:var(--dark3);max-width:680px;margin:0 auto 26px}.sc-video-box iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}.sc-cd-wrap{margin-bottom:24px}.sc-cd-title{font-size:13px;color:var(--gray);margin-bottom:10px}.sc-cd-box{background:var(--dark3);border:1px solid var(--border);border-radius:10px;padding:10px 8px;text-align:center;min-width:52px;flex:1;max-width:72px}.sc-cd-num{display:block;font-size:22px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums}.sc-cd-lbl{font-size:10px;color:var(--gray);margin-top:2px}.sc-cd-row{display:flex;justify-content:center;gap:6px}.sc-ph-old{font-size:16px;color:var(--gray);text-decoration:line-through;margin-bottom:4px}.sc-ph-big{font-size:44px;font-weight:900;color:var(--orange);line-height:1}.sc-ph-currency{font-size:22px}.sc-ph-badge{display:inline-block;background:#1a4a1a;color:var(--green);font-size:13px;font-weight:700;padding:5px 14px;border-radius:20px;margin-top:8px}.sc-btn-p{display:block;background:var(--orange);color:var(--black);font-family:'Cairo',sans-serif;font-weight:900;font-size:17px;padding:17px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;text-align:center;width:100%;margin-bottom:12px;transition:transform .2s,background .2s;box-shadow:0 4px 20px rgba(255,153,0,0.3)}.sc-btn-p:hover{background:var(--orange-dark);transform:translateY(-2px)}.sc-btn-s{display:block;background:transparent;color:var(--white);font-family:'Cairo',sans-serif;font-weight:700;font-size:15px;padding:14px;border:1.5px solid rgba(255,255,255,.25);border-radius:10px;cursor:pointer;text-decoration:none;text-align:center;width:100%;transition:border-color .2s,color .2s}.sc-btn-s:hover{border-color:var(--orange);color:var(--orange)}.sc-stats{background:var(--dark3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 10px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.sc-s-item{text-align:center;padding:4px 0}.sc-s-num{font-size:20px;font-weight:900;color:var(--orange);display:block}.sc-s-lbl{font-size:10px;color:#ccc}.sc-section{padding:56px 20px}.sc-sec-title{font-size:22px;font-weight:900;text-align:center;margin-bottom:6px;line-height:1.4}.sc-sec-title span{color:var(--orange)}.sc-sec-sub{text-align:center;color:var(--gray);font-size:14px;margin-bottom:0;line-height:1.7}.sc-line{width:56px;height:4px;background:var(--orange);border-radius:2px;margin:10px auto 26px}.sc-why-cards{display:flex;flex-direction:column;gap:14px}.sc-w-card{background:var(--dark2);border:1px solid var(--border);border-radius:14px;padding:22px}.sc-w-icon{font-size:32px;margin-bottom:10px}.sc-w-card h3{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--orange)}.sc-w-card p{font-size:13px;color:#ccc;line-height:1.7}.sc-learn-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:12px;margin:0 -20px;padding-right:20px;padding-left:20px}.sc-learn-track::-webkit-scrollbar{display:none}.sc-l-item{flex:0 0 82vw;max-width:300px;scroll-snap-align:start;display:flex;flex-direction:row;align-items:flex-start;gap:14px;background:var(--dark2);border:1px solid var(--border);border-radius:14px;padding:20px;transition:border-color .2s}.sc-l-item:hover{border-color:var(--orange)}.sc-l-num{background:var(--orange);color:var(--black);font-weight:900;font-size:15px;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.sc-l-text h4{font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.4}.sc-l-text p{font-size:13px;color:#bbb;line-height:1.7}.sc-learn-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}.sc-learn-dots span{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all .3s;display:inline-block}.sc-learn-dots span.active{background:var(--orange);width:18px;border-radius:3px}.sc-car-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}.sc-car-track::-webkit-scrollbar{display:none}.sc-car-slide{flex:0 0 82vw;max-width:320px;scroll-snap-align:start;border-radius:12px;overflow:hidden;border:2px dashed rgba(255,153,0,0.3);background:var(--dark2)}.sc-car-slide img{width:100%;height:220px;object-fit:cover;display:block;border-radius:10px}.sc-ph-slide{width:100%;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}.sc-ph-ico{font-size:44px;opacity:.2}.sc-ph-txt{font-size:12px;color:var(--gray);opacity:.5}.sc-car-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}.sc-dot{width:8px;height:8px;border-radius:50%;background:var(--dark3);cursor:pointer;transition:all .25s}.sc-dot.active{background:var(--orange);width:22px;border-radius:4px}.sc-who-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sc-who-card{background:var(--dark2);border:1px solid var(--border);border-radius:14px;padding:20px 14px;text-align:center;transition:border-color .25s}.sc-who-card:hover{border-color:var(--orange)}.sc-who-ico{font-size:30px;margin-bottom:8px}.sc-who-card h3{font-size:14px;font-weight:700;margin-bottom:5px}.sc-who-card p{font-size:12px;color:#aaa;line-height:1.5}.sc-test-list{display:flex;flex-direction:column;gap:14px}.sc-t-card{background:var(--dark2);border:1px solid var(--border);border-radius:14px;padding:20px}.sc-t-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}.sc-t-av{width:44px;height:44px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--black);flex-shrink:0}.sc-t-name{font-weight:700;font-size:14px}.sc-t-stars{color:var(--orange);font-size:13px}.sc-t-body{font-size:13px;color:#ccc;line-height:1.7}.sc-t-result{margin-top:12px;background:rgba(255,153,0,0.08);border:1px solid var(--border);border-radius:8px;padding:9px 14px;font-size:12px;font-weight:700;color:var(--orange)}.sc-ins-card{background:var(--dark2);border:1px solid var(--border);border-radius:16px;overflow:hidden}.sc-ins-photo-ph{width:100%;height:260px;background:var(--dark3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-bottom:1px solid var(--border)}.sc-ins-photo-img{width:100%;max-height:360px;object-fit:cover;object-position:top;display:block}.sc-ins-ph-ico{font-size:72px;opacity:.12}.sc-ins-ph-txt{font-size:12px;color:var(--gray);opacity:.45}.sc-ins-info{padding:22px}.sc-ins-name{font-size:20px;font-weight:900;margin-bottom:3px}.sc-ins-title{color:var(--orange);font-size:13px;font-weight:600;margin-bottom:14px}.sc-ins-bio{font-size:13px;color:#ccc;line-height:1.85;margin-bottom:18px}.sc-ins-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.sc-is-box{background:var(--dark3);border-radius:10px;padding:12px 8px;text-align:center}.sc-is-num{display:block;font-size:18px;font-weight:900;color:var(--orange)}.sc-is-lbl{font-size:10px;color:#aaa}.sc-price-card{background:var(--dark2);border:2px solid var(--orange);border-radius:18px;overflow:hidden;max-width:480px;margin:0 auto;box-shadow:0 8px 40px rgba(255,153,0,0.15)}.sc-price-head{background:var(--orange);padding:20px;text-align:center}.sc-price-head h3{font-size:17px;font-weight:900;color:var(--black);margin-bottom:3px}.sc-price-head p{font-size:12px;color:rgba(0,0,0,.65)}.sc-price-body{padding:26px 22px}.sc-price-big{text-align:center;margin-bottom:4px}.sc-price-main{font-size:52px;font-weight:900;color:var(--orange)}.sc-price-curr{font-size:22px;color:var(--orange)}.sc-price-old{text-align:center;font-size:16px;color:var(--gray);text-decoration:line-through;margin-bottom:18px}.sc-price-feats{list-style:none;margin-bottom:20px}.sc-price-feats li{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;display:flex;align-items:center;gap:10px}.sc-price-feats li:last-child{border-bottom:none}.sc-chk{color:var(--green);font-size:15px}.sc-pay-box{background:var(--dark3);border-radius:10px;padding:14px;text-align:center;margin-bottom:18px}.sc-pay-box p{font-size:12px;color:var(--gray);margin-bottom:8px}.sc-pay-icons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.sc-pay-badge{background:var(--dark2);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--white)}.sc-guar-card{background:linear-gradient(135deg,#0d1f0d,#1a2a1a);border:2px solid var(--green);border-radius:18px;padding:32px 22px;text-align:center;max-width:480px;margin:0 auto}.sc-guar-ico{font-size:56px;margin-bottom:14px}.sc-guar-card h3{font-size:20px;font-weight:900;color:var(--green);margin-bottom:10px}.sc-guar-card p{font-size:13px;color:#ccc;line-height:1.85}.sc-guar-badge{display:inline-block;background:var(--green);color:#0d1f0d;font-weight:900;font-size:13px;padding:8px 22px;border-radius:50px;margin-top:14px}.sc-faq-list{display:flex;flex-direction:column;gap:10px;max-width:720px;margin:0 auto}.sc-faq-item{background:var(--dark2);border:1px solid var(--border);border-radius:12px;overflow:hidden}.sc-faq-q{padding:16px 18px;font-size:14px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none}.sc-faq-arr{color:var(--orange);font-size:16px;flex-shrink:0;transition:transform .3s}.sc-faq-item.open .sc-faq-arr{transform:rotate(180deg)}.sc-faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}.sc-faq-a-in{padding:14px 18px 18px;font-size:13px;color:#aaa;line-height:1.85;border-top:1px solid var(--border)}.sc-cta-bottom{background:linear-gradient(135deg,#131921,#1C2730);padding:56px 20px;text-align:center}.sc-cta-bottom h2{font-size:22px;font-weight:900;margin-bottom:10px}.sc-cta-bottom h2 span{color:var(--orange)}.sc-cta-bottom p{font-size:14px;color:#ccc;margin-bottom:24px;line-height:1.7}.sc-footer{background:var(--dark3);border-top:1px solid var(--border);padding:30px 20px;text-align:center}.sc-f-logo{font-size:20px;font-weight:900;margin-bottom:14px}.sc-f-logo span{color:var(--orange)}.sc-f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}.sc-f-links a{color:#888;text-decoration:none;font-size:12px;transition:color .2s}.sc-f-links a:hover{color:var(--orange)}.sc-f-copy{font-size:11px;color:#555}.sc-wa-btn{position:fixed;bottom:22px;left:22px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.45);z-index:9999;text-decoration:none;transition:transform .2s}.sc-wa-btn:hover{transform:scale(1.1)}.sc-wa-btn svg{width:28px;height:28px;fill:white}@media(min-width:768px){.sc-hero{padding:calc(var(--nav-h)+48px) 40px 80px}.sc-h1{font-size:36px}.sc-why-cards{flex-direction:row}.sc-w-card{flex:1}.sc-car-slide{flex:0 0 300px}.sc-who-grid{grid-template-columns:repeat(4,1fr)}.sc-test-list{flex-direction:row}.sc-t-card{flex:1}.sc-ins-card{display:grid;grid-template-columns:320px 1fr}.sc-ins-photo-ph{height:auto;min-height:380px;border-bottom:none;border-left:1px solid var(--border)}.sc-learn-track{flex-wrap:wrap;overflow-x:visible;scroll-snap-type:none;margin:0;padding:0;gap:12px}.sc-l-item{flex:0 0 calc(50% - 6px);max-width:none}.sc-learn-dots{display:none}.sc-section{padding:72px 40px}.sc-sec-title{font-size:28px}.sc-cta-bottom h2{font-size:30px}}@media(min-width:1024px){.sc-h1{font-size:42px}.sc-section{padding:80px 60px}}"
+  },
+  "content": [
+    {
+      "id": "sc_font01",
+      "elType": "container",
+      "settings": { "_title": "Font Import", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_font02",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": { "_title": "Cairo Font", "html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap\" rel=\"stylesheet\"><style>body{padding-top:var(--nav-h)}</style>" },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_nav01",
+      "elType": "container",
+      "settings": { "_title": "Header — Sticky Nav", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_nav02",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Sticky Nav",
+            "html": "<nav class=\"sc-nav\" id=\"scMainNav\"><a href=\"/\" class=\"sc-nav-logo\">Seller <span>Circle</span></a><div class=\"sc-nav-right\"><a href=\"/my-account/\" class=\"sc-nav-login\">تسجيل الدخول</a><a href=\"/checkout/?add-to-cart=44\" class=\"sc-nav-cta\">اشترك الآن — 999ج</a></div></nav>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_hero1",
+      "elType": "container",
+      "settings": { "_title": "Hero Section", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_hero2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Hero Content",
+            "html": "<section class=\"sc-hero\"><div class=\"sc-hook\">🚀 أمازون FBA — الفرصة الحقيقية لا تزال موجودة</div><h1 class=\"sc-h1\">ابدأ بيزنسك على <span>أمازون FBA</span><br>من الصفر حتى أول شحنة</h1><p class=\"sc-sub\">الكورس الوحيد اللي هتتعلم فيه كل خطوة بشكل عملي — من فتح الحساب لأول مبيعات حقيقية على أمازون</p><div class=\"sc-video-box\"><iframe src=\"https://iframe.mediadelivery.net/embed/657446/01f28482-8d26-4e12-a260-90dedbdadad3?autoplay=false&loop=false&muted=false&preload=true\" allow=\"accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;\" allowfullscreen loading=\"lazy\"></iframe></div><div class=\"sc-cd-wrap\"><p class=\"sc-cd-title\">⏰ العرض ينتهي خلال</p><div class=\"sc-cd-row\"><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-d\">03</span><span class=\"sc-cd-lbl\">يوم</span></div><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-h\">23</span><span class=\"sc-cd-lbl\">ساعة</span></div><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-m\">59</span><span class=\"sc-cd-lbl\">دقيقة</span></div><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-s\">00</span><span class=\"sc-cd-lbl\">ثانية</span></div></div></div><div style=\"margin-bottom:24px\"><div class=\"sc-ph-old\">5,999 جنيه</div><div><span class=\"sc-ph-big\">999</span><span class=\"sc-ph-currency\"> ج</span></div><div><span class=\"sc-ph-badge\">✅ وفّر 83% — عرض محدود</span></div></div><a href=\"/checkout/?add-to-cart=44\" class=\"sc-btn-p\">🛒 اشترك الآن بـ 999ج فقط</a><a href=\"/my-account/\" class=\"sc-btn-s\">🔑 سجّل دخولك</a></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_stats1",
+      "elType": "container",
+      "settings": { "_title": "Stats Bar", "content_width": "full", "background_background": "classic", "background_color": "#232F3E", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_stats2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Stats Numbers",
+            "html": "<div class=\"sc-stats\"><div class=\"sc-s-item\"><span class=\"sc-s-num\">+950</span><span class=\"sc-s-lbl\">طالب مسجل</span></div><div class=\"sc-s-item\"><span class=\"sc-s-num\">33</span><span class=\"sc-s-lbl\">فيديو تعليمي</span></div><div class=\"sc-s-item\"><span class=\"sc-s-num\">7</span><span class=\"sc-s-lbl\">وحدات كاملة</span></div><div class=\"sc-s-item\"><span class=\"sc-s-num\">4.9★</span><span class=\"sc-s-lbl\">تقييم الطلاب</span></div></div>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_why01",
+      "elType": "container",
+      "settings": { "_title": "Why Amazon FBA", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_why02",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Why Amazon Content",
+            "html": "<section class=\"sc-section\" style=\"background:var(--dark)\"><h2 class=\"sc-sec-title\">لماذا <span>أمازون</span> هو أفضل بيزنس الآن؟</h2><div class=\"sc-line\"></div><div class=\"sc-why-cards\"><div class=\"sc-w-card\"><div class=\"sc-w-icon\">💰</div><h3>عائد استثماري عالي</h3><p>أمازون من أكتر المنصات اللي بتديك ربح حقيقي بأقل مخاطرة — لو اتعلمت صح</p></div><div class=\"sc-w-card\"><div class=\"sc-w-icon\">🌍</div><h3>اعمل من أي مكان</h3><p>بيزنس 100% أونلاين — من مصر، من البيت، من أي مكان في العالم بأي وقت</p></div><div class=\"sc-w-card\"><div class=\"sc-w-icon\">📦</div><h3>أمازون بيتولى الشحن</h3><p>FBA يعني أمازون بيتولى التخزين والتوصيل — أنت بس ركّز على البيع والربح</p></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_lrn01",
+      "elType": "container",
+      "settings": { "_title": "What You Learn", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_lrn02",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Curriculum Cards",
+            "html": "<section class=\"sc-section\" style=\"background:var(--black)\"><h2 class=\"sc-sec-title\">ماذا ستتعلم <span>بالضبط؟</span></h2><p class=\"sc-sec-sub\">33 فيديو عملي — 7 وحدات من الصفر للاحتراف</p><div class=\"sc-line\"></div><div class=\"sc-learn-track\" id=\"scLearnTrack\"><div class=\"sc-l-item\"><div class=\"sc-l-num\">١</div><div class=\"sc-l-text\"><h4>البداية وفتح حساب البائع</h4><p>فتح الأكاونت خطوة بخطوة والإعداد الصح من أول يوم</p></div></div><div class=\"sc-l-item\"><div class=\"sc-l-num\">٢</div><div class=\"sc-l-text\"><h4>أساسيات السوق ومصطلحات أمازون</h4><p>كل المصطلحات والمفاهيم الأساسية اللي محتاجها تفهم السوق</p></div></div><div class=\"sc-l-item\"><div class=\"sc-l-num\">٣</div><div class=\"sc-l-text\"><h4>البحث عن المنتج المربح</h4><p>استخدام أدوات البحث الاحترافية لاختيار منتج بيجيب فلوس</p></div></div><div class=\"sc-l-item\"><div class=\"sc-l-num\">٤</div><div class=\"sc-l-text\"><h4>تجهيز المنتج والتواصل مع الموردين</h4><p>إزاي تتفاوض مع الموردين وتاخد أحسن سعر وجودة</p></div></div><div class=\"sc-l-item\"><div class=\"sc-l-num\">٥</div><div class=\"sc-l-text\"><h4>الشحن الدولي FBA</h4><p>خطوات الشحن من المورد لمستودعات أمازون بشكل صح ومضمون</p></div></div><div class=\"sc-l-item\"><div class=\"sc-l-num\">٦</div><div class=\"sc-l-text\"><h4>إدارة المبيعات والإعلانات PPC</h4><p>إطلاق الإعلانات وإدارتها بشكل مربح لزيادة المبيعات</p></div></div><div class=\"sc-l-item\"><div class=\"sc-l-num\">٧</div><div class=\"sc-l-text\"><h4>التوسع وزيادة المبيعات</h4><p>إزاي تكبّر البيزنس وتضاعف الأرباح على أمازون على المدى الطويل</p></div></div></div><div class=\"sc-learn-dots\" id=\"scLearnDots\"><span class=\"active\"></span><span></span><span></span><span></span><span></span><span></span><span></span></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_sp001",
+      "elType": "container",
+      "settings": { "_title": "Sales Proof Carousel", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_sp002",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Sales Screenshots Carousel",
+            "html": "<section class=\"sc-section\" style=\"background:var(--dark)\"><h2 class=\"sc-sec-title\">📊 نتائج <span>حقيقية</span> على أمازون</h2><p class=\"sc-sec-sub\">أرقام مبيعات من Seller Central — مش كلام</p><div class=\"sc-line\"></div><div class=\"sc-car-track\" id=\"scCarTrack\"><div class=\"sc-car-slide\"><div class=\"sc-ph-slide\"><span class=\"sc-ph-ico\">📸</span><span class=\"sc-ph-txt\">أضف صورة مبيعاتك هنا ١</span></div></div><div class=\"sc-car-slide\"><div class=\"sc-ph-slide\"><span class=\"sc-ph-ico\">📸</span><span class=\"sc-ph-txt\">أضف صورة مبيعاتك هنا ٢</span></div></div><div class=\"sc-car-slide\"><div class=\"sc-ph-slide\"><span class=\"sc-ph-ico\">📸</span><span class=\"sc-ph-txt\">أضف صورة مبيعاتك هنا ٣</span></div></div><div class=\"sc-car-slide\"><div class=\"sc-ph-slide\"><span class=\"sc-ph-ico\">📸</span><span class=\"sc-ph-txt\">أضف صورة مبيعاتك هنا ٤</span></div></div><div class=\"sc-car-slide\"><div class=\"sc-ph-slide\"><span class=\"sc-ph-ico\">📸</span><span class=\"sc-ph-txt\">أضف صورة مبيعاتك هنا ٥</span></div></div></div><div class=\"sc-car-dots\" id=\"scCarDots\"><div class=\"sc-dot active\"></div><div class=\"sc-dot\"></div><div class=\"sc-dot\"></div><div class=\"sc-dot\"></div><div class=\"sc-dot\"></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_who1",
+      "elType": "container",
+      "settings": { "_title": "Who Is This For", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_who2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Target Audience",
+            "html": "<section class=\"sc-section\" style=\"background:var(--black)\"><h2 class=\"sc-sec-title\">لمن هذا <span>الكورس؟</span></h2><div class=\"sc-line\"></div><div class=\"sc-who-grid\"><div class=\"sc-who-card\"><div class=\"sc-who-ico\">🌱</div><h3>المبتدئ</h3><p>مش عارف تبدأ منين على أمازون</p></div><div class=\"sc-who-card\"><div class=\"sc-who-ico\">💼</div><h3>صاحب العمل</h3><p>عايز يفتح قناة مبيعات جديدة</p></div><div class=\"sc-who-card\"><div class=\"sc-who-ico\">📈</div><h3>السيلر الموجود</h3><p>عايز يطوّر ويكبّر بيزنسه</p></div><div class=\"sc-who-card\"><div class=\"sc-who-ico\">🎓</div><h3>الطالب والموظف</h3><p>عايز مصدر دخل إضافي أونلاين</p></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_tst1",
+      "elType": "container",
+      "settings": { "_title": "Testimonials", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_tst2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Student Reviews",
+            "html": "<section class=\"sc-section\" style=\"background:var(--dark)\"><h2 class=\"sc-sec-title\">آراء <span>الطلاب</span></h2><div class=\"sc-line\"></div><div class=\"sc-test-list\"><div class=\"sc-t-card\"><div class=\"sc-t-head\"><div class=\"sc-t-av\">أ</div><div><div class=\"sc-t-name\">أحمد محمد</div><div class=\"sc-t-stars\">★★★★★</div></div></div><p class=\"sc-t-body\">الكورس غيّر طريقة تفكيري في موضوع البيع أونلاين. خطوة بخطوة وواضح جداً</p><div class=\"sc-t-result\">✅ وصل لأول مبيعاته على أمازون</div></div><div class=\"sc-t-card\"><div class=\"sc-t-head\"><div class=\"sc-t-av\">م</div><div><div class=\"sc-t-name\">محمد علي</div><div class=\"sc-t-stars\">★★★★★</div></div></div><p class=\"sc-t-body\">استفدت جداً من جزء البحث عن المنتج — كنت مش عارف أبدأ منين وبعد الكورس بقيت فاهم</p><div class=\"sc-t-result\">✅ اختار منتجه وبدأ شحنه</div></div><div class=\"sc-t-card\"><div class=\"sc-t-head\"><div class=\"sc-t-av\">س</div><div><div class=\"sc-t-name\">سارة أحمد</div><div class=\"sc-t-stars\">★★★★★</div></div></div><p class=\"sc-t-body\">كنت خايفة أجرب أمازون بس بعد الكورس حسيت إن عندي الأدوات الكافية للبدء بثقة</p><div class=\"sc-t-result\">✅ بدأت رحلتها على أمازون</div></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_ins1",
+      "elType": "container",
+      "settings": { "_title": "Instructor Section", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_ins2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "About Instructor",
+            "html": "<section class=\"sc-section\" style=\"background:var(--black)\"><h2 class=\"sc-sec-title\">من <span>أنا؟</span></h2><div class=\"sc-line\"></div><div class=\"sc-ins-card\"><div class=\"sc-ins-photo-ph\"><span class=\"sc-ins-ph-ico\">👤</span><span class=\"sc-ins-ph-txt\">أضف صورتك هنا</span></div><div class=\"sc-ins-info\"><div class=\"sc-ins-name\">اسمك هنا</div><div class=\"sc-ins-title\">بائع محترف على أمازون FBA | مدرب متخصص</div><p class=\"sc-ins-bio\">بدأت رحلتي على أمازون من الصفر، ومريت بتجارب كتير قبل ما أوصل للطريقة الصح. بعد سنوات من التعلم والتطبيق الفعلي، تمكنت من بناء بيزنس ناجح على أمازون FBA. هدفي إنك تاخد الطريق الصح من أول يوم وتتجنب الأخطاء الكلفانة.</p><div class=\"sc-ins-stats\"><div class=\"sc-is-box\"><span class=\"sc-is-num\">+950</span><span class=\"sc-is-lbl\">طالب</span></div><div class=\"sc-is-box\"><span class=\"sc-is-num\">3+</span><span class=\"sc-is-lbl\">سنوات خبرة</span></div><div class=\"sc-is-box\"><span class=\"sc-is-num\">7</span><span class=\"sc-is-lbl\">وحدات</span></div></div></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_pr001",
+      "elType": "container",
+      "settings": { "_title": "Pricing Section", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_pr002",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Price Card + Countdown",
+            "html": "<section class=\"sc-section\" id=\"sc-price\" style=\"background:var(--dark)\"><h2 class=\"sc-sec-title\">سعر <span>الكورس</span></h2><p class=\"sc-sec-sub\">استثمار واحد — وصول مدى الحياة</p><div class=\"sc-line\"></div><div style=\"margin-bottom:22px;text-align:center\"><div class=\"sc-cd-row\" style=\"justify-content:center;margin-bottom:8px\"><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-d2\">03</span><span class=\"sc-cd-lbl\">يوم</span></div><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-h2\">23</span><span class=\"sc-cd-lbl\">ساعة</span></div><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-m2\">59</span><span class=\"sc-cd-lbl\">دقيقة</span></div><div class=\"sc-cd-box\"><span class=\"sc-cd-num\" id=\"cd-s2\">00</span><span class=\"sc-cd-lbl\">ثانية</span></div></div><p style=\"font-size:12px;color:var(--gray)\">⏰ بعد انتهاء العداد السعر بيرجع 5,999ج</p></div><div class=\"sc-price-card\"><div class=\"sc-price-head\"><h3>Seller Circle — الكورس الكامل</h3><p>وصول مدى الحياة + تحديثات مجانية</p></div><div class=\"sc-price-body\"><div class=\"sc-price-big\"><span class=\"sc-price-main\">999</span><span class=\"sc-price-curr\"> ج</span></div><div class=\"sc-price-old\">بدلاً من 5,999 جنيه</div><ul class=\"sc-price-feats\"><li><span class=\"sc-chk\">✅</span> 33 فيديو تعليمي عملي</li><li><span class=\"sc-chk\">✅</span> 7 وحدات من الصفر للاحتراف</li><li><span class=\"sc-chk\">✅</span> وصول مدى الحياة + تحديثات مجانية</li><li><span class=\"sc-chk\">✅</span> مجموعة واتساب للدعم</li><li><span class=\"sc-chk\">✅</span> ضمان استرداد المال</li></ul><div class=\"sc-pay-box\"><p>طرق الدفع المتاحة</p><div class=\"sc-pay-icons\"><span class=\"sc-pay-badge\">💳 كارت بنكي</span><span class=\"sc-pay-badge\">📱 إنستاباي</span><span class=\"sc-pay-badge\">📞 فودافون كاش</span></div></div><a href=\"/checkout/?add-to-cart=44\" class=\"sc-btn-p\">🚀 اشترك الآن بـ 999ج</a></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_gar1",
+      "elType": "container",
+      "settings": { "_title": "Guarantee Section", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_gar2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Money Back Guarantee",
+            "html": "<section class=\"sc-section\" style=\"background:var(--black)\"><div class=\"sc-guar-card\"><div class=\"sc-guar-ico\">🛡️</div><h3>ضمان استرداد المال الكامل</h3><p>جرّب الكورس بدون أي مخاطرة.<br><br>لو شاهدت الكورس وحسيت إنه مش المناسب ليك، هنرد عليك <strong>فلوسك بالكامل 100%</strong> — بدون أسئلة.<br><br><strong>الشرط الوحيد:</strong> تكون مشاهدت أقل من 20% من الكورس (٤-٥ دروس فقط)</p><span class=\"sc-guar-badge\">✅ ضمان كامل — صفر مخاطرة</span></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_faq1",
+      "elType": "container",
+      "settings": { "_title": "FAQ Section", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_faq2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "FAQ Accordion",
+            "html": "<section class=\"sc-section\" style=\"background:var(--dark)\"><h2 class=\"sc-sec-title\">الأسئلة <span>الشائعة</span></h2><div class=\"sc-line\"></div><div class=\"sc-faq-list\"><div class=\"sc-faq-item\"><div class=\"sc-faq-q\">هل الكورس مناسب للمبتدئ اللي معندوش خبرة؟<span class=\"sc-faq-arr\">▼</span></div><div class=\"sc-faq-a\"><div class=\"sc-faq-a-in\">أيوه، الكورس بيبدأ من الصفر الكامل. مش محتاج أي خبرة سابقة — بس محتاج رغبة حقيقية في التعلم والتطبيق.</div></div></div><div class=\"sc-faq-item\"><div class=\"sc-faq-q\">قد إيه رأس المال المطلوب للبدء؟<span class=\"sc-faq-arr\">▼</span></div><div class=\"sc-faq-a\"><div class=\"sc-faq-a-in\">ممكن تبدأ بـ 1,500 - 3,000 دولار كـ minimum. الكورس بيوضح كل التفاصيل وإزاي تختار منتج يناسب ميزانيتك.</div></div></div><div class=\"sc-faq-item\"><div class=\"sc-faq-q\">هل الوصول للكورس مدى الحياة؟<span class=\"sc-faq-arr\">▼</span></div><div class=\"sc-faq-a\"><div class=\"sc-faq-a-in\">أيوه بالتأكيد. بمجرد اشتراكك بتاخد وصول مدى الحياة + أي تحديثات جديدة هتتضاف مجاناً.</div></div></div><div class=\"sc-faq-item\"><div class=\"sc-faq-q\">إيه سياسة استرداد المال؟<span class=\"sc-faq-arr\">▼</span></div><div class=\"sc-faq-a\"><div class=\"sc-faq-a-in\">لو شاهدت أقل من 20% (٤-٥ دروس) وحسيت إنه مش مناسب، بنرد عليك فلوسك بالكامل بدون أسئلة.</div></div></div><div class=\"sc-faq-item\"><div class=\"sc-faq-q\">هل ممكن أبيع على أمازون من مصر؟<span class=\"sc-faq-arr\">▼</span></div><div class=\"sc-faq-a\"><div class=\"sc-faq-a-in\">أيوه بالتأكيد! الكورس مصمم خصيصاً للبائعين المصريين والعرب — بيغطي كل خطوات فتح الحساب من مصر.</div></div></div><div class=\"sc-faq-item\"><div class=\"sc-faq-q\">إيه الفرق عن الكورسات التانية؟<span class=\"sc-faq-arr\">▼</span></div><div class=\"sc-faq-a\"><div class=\"sc-faq-a-in\">الكورس ده مبني على تجربة حقيقية مش نظريات. كل خطوة اتعلمتها بالعمل الفعلي على أمازون، والمحتوى بيتحدّث باستمرار.</div></div></div></div></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_cta1",
+      "elType": "container",
+      "settings": { "_title": "Final CTA", "content_width": "full", "background_background": "classic", "background_color": "#131921", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_cta2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Final Call To Action",
+            "html": "<section class=\"sc-cta-bottom\"><h2>جاهز تبدأ رحلتك على <span>أمازون؟</span></h2><p>انضم لـ +950 طالب بيتعلموا البيع على أمازون — الكورس متاح الآن بسعر خاص</p><a href=\"/checkout/?add-to-cart=44\" class=\"sc-btn-p\" style=\"max-width:360px;margin:0 auto\">🛒 اشترك الآن بـ 999ج فقط</a></section>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_ft001",
+      "elType": "container",
+      "settings": { "_title": "Footer", "content_width": "full", "background_background": "classic", "background_color": "#232F3E", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_ft002",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Footer Links",
+            "html": "<footer class=\"sc-footer\"><div class=\"sc-f-logo\">Seller <span>Circle</span></div><div class=\"sc-f-links\"><a href=\"/privacy-policy/\">سياسة الخصوصية</a><a href=\"/refund-policy/\">سياسة الاسترداد</a><a href=\"/terms/\">الشروط والأحكام</a><a href=\"/my-account/\">حسابي</a><a href=\"mailto:support@seller-circle.com\">تواصل معنا</a></div><p class=\"sc-f-copy\">© 2025 Seller Circle. جميع الحقوق محفوظة.</p></footer>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_wa001",
+      "elType": "container",
+      "settings": { "_title": "Floating WhatsApp", "content_width": "full", "background_background": "classic", "background_color": "transparent", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_wa002",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "WhatsApp Float Button",
+            "html": "<a href=\"https://wa.me/201030435954?text=مرحبا،%20أريد%20الاستفسار%20عن%20كورس%20Seller%20Circle\" class=\"sc-wa-btn\" target=\"_blank\" rel=\"noopener\" aria-label=\"واتساب\"><svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z\"/></svg></a>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "sc_js001",
+      "elType": "container",
+      "settings": { "_title": "JS Scripts", "content_width": "full", "background_background": "classic", "background_color": "#0F1111", "padding": {"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true} },
+      "elements": [
+        {
+          "id": "sc_js002",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Countdown + FAQ + Carousels JS",
+            "html": "<script>(function(){var track=document.querySelector('.sc-learn-track');var dots=document.querySelectorAll('.sc-learn-dots span');if(!track||!dots.length)return;track.addEventListener('scroll',function(){var idx=Math.round(track.scrollLeft/(track.scrollWidth/dots.length));dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});},{passive:true});})();(function(){var track=document.querySelector('.sc-car-track');var dots=document.querySelectorAll('.sc-dot');if(!track||!dots.length)return;track.addEventListener('scroll',function(){var slideW=track.firstElementChild.offsetWidth+12;var idx=Math.round(track.scrollLeft/slideW);dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});},{passive:true});})();(function(){var KEY='sc_v2_deadline';var stored=localStorage.getItem(KEY);var deadline=stored?parseInt(stored):Date.now()+3*24*60*60*1000;if(!stored)localStorage.setItem(KEY,deadline);function pad(n){return String(n).padStart(2,'0')}function tick(){var diff=Math.max(0,deadline-Date.now());var d=Math.floor(diff/86400000);diff%=86400000;var h=Math.floor(diff/3600000);diff%=3600000;var m=Math.floor(diff/60000);diff%=60000;var s=Math.floor(diff/1000);['d','h','m','s'].forEach(function(k,i){var v=[d,h,m,s][i];['cd-'+k,'cd-'+k+'2'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=pad(v);});});}tick();setInterval(tick,1000);})();document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.sc-faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.sc-faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.sc-faq-a').style.maxHeight='0';});if(!isOpen){item.classList.add('open');var a=item.querySelector('.sc-faq-a');a.style.maxHeight=a.scrollHeight+'px';}});});});</script>"
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

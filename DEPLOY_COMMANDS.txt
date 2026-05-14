@@ -1,0 +1,41 @@
+============================================
+SELLER CIRCLE FBA — Deploy to GitHub + Vercel
+============================================
+
+STEP 1: افتح Command Prompt أو PowerShell
+واتجه لمجلد الموقع:
+
+  cd "D:\موقع الكورس"
+
+--------------------------------------------
+STEP 2: Initialize Git
+
+  git init
+  git add .
+  git commit -m "Initial commit — Seller Circle FBA v1.0"
+
+--------------------------------------------
+STEP 3: Create GitHub Repo
+اذهب لـ https://github.com/new
+اسم الريبو: seller-circle-fba
+اتركه Public
+لا تضف README
+
+--------------------------------------------
+STEP 4: Connect & Push
+
+  git remote add origin https://github.com/YOUR_USERNAME/seller-circle-fba.git
+  git branch -M main
+  git push -u origin main
+
+--------------------------------------------
+STEP 5: Deploy on Vercel
+اذهب لـ https://vercel.com
+- اضغط "Add New Project"
+- اختار الريبو "seller-circle-fba"
+- اضغط Deploy
+- انتظر 30 ثانية
+- الموقع هيكون live على URL زي:
+  https://seller-circle-fba.vercel.app
+
+============================================

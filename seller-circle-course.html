@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Circle — مشغّل الكورس</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#FF9900;--black:#0F1111;--dark:#131921;--dark2:#1C2730;--dark3:#232F3E;--white:#fff;--gray:#8B949E;--green:#4ade80;--border:rgba(255,153,0,0.18)}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);direction:rtl;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* NAV */
+nav{background:rgba(15,17,17,0.97);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;z-index:10}
+.nav-logo{font-size:17px;font-weight:900;text-decoration:none;color:var(--white)}
+.nav-logo span{color:var(--orange)}
+.nav-center{font-size:13px;font-weight:700;color:#ccc;flex:1;text-align:center;padding:0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-back{font-size:12px;color:var(--gray);text-decoration:none;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nav-back:hover{color:var(--white)}
+
+/* MAIN LAYOUT */
+.layout{display:flex;flex:1;overflow:hidden}
+
+/* SIDEBAR */
+.sidebar{width:300px;flex-shrink:0;background:var(--dark2);border-left:1px solid var(--border);overflow-y:auto;display:flex;flex-direction:column}
+.sidebar-head{padding:14px 16px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sidebar-head h3{font-size:14px;font-weight:900;margin-bottom:4px}
+.sidebar-progress{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--gray)}
+.prog-bar{flex:1;background:var(--dark3);border-radius:10px;height:4px;overflow:hidden}
+.prog-fill{height:100%;background:var(--orange);width:0%;transition:width .5s}
+.prog-txt{white-space:nowrap}
+
+.module-group{border-bottom:1px solid rgba(255,255,255,0.06)}
+.module-head{padding:12px 16px;font-size:12px;font-weight:700;color:var(--orange);background:rgba(255,153,0,0.04);cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none}
+.module-head:hover{background:rgba(255,153,0,0.08)}
+.module-arr{transition:transform .25s;font-size:10px}
+.module-head.open .module-arr{transform:rotate(180deg)}
+.module-lessons{display:none}
+.module-head.open + .module-lessons{display:block}
+.lesson-item{display:flex;align-items:center;gap:10px;padding:10px 16px;font-size:12px;color:#ccc;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.04);transition:all .15s}
+.lesson-item:hover{background:rgba(255,255,255,0.04);color:var(--white)}
+.lesson-item.active{background:rgba(255,153,0,0.1);color:var(--orange);font-weight:700}
+.lesson-item.done{color:var(--green)}
+.lesson-ico{font-size:13px;flex-shrink:0;width:16px;text-align:center}
+.lesson-dur{margin-right:auto;font-size:10px;color:var(--gray);flex-shrink:0}
+
+/* MOBILE SIDEBAR TOGGLE */
+.mob-toggle{display:none;background:var(--dark2);border:none;color:var(--white);font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;padding:8px 14px;border-radius:8px;cursor:pointer;border:1px solid var(--border)}
+@media(max-width:700px){
+  .mob-toggle{display:block}
+  .sidebar{position:fixed;top:0;right:-300px;height:100%;z-index:200;transition:right .3s}
+  .sidebar.open{right:0}
+  .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199}
+  .overlay.show{display:block}
+}
+
+/* PLAYER AREA */
+.player-area{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.video-wrap{background:#000;position:relative;width:100%}
+.video-wrap::before{content:'';display:block;padding-top:56.25%}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.lesson-meta{padding:20px 24px;border-bottom:1px solid var(--border)}
+.lesson-title{font-size:20px;font-weight:900;margin-bottom:8px}
+.lesson-info{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--gray)}
+.btn-done{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#0a1a0a;font-family:'Cairo',sans-serif;font-weight:900;font-size:13px;padding:9px 18px;border:none;border-radius:8px;cursor:pointer;transition:all .2s}
+.btn-done:hover{filter:brightness(1.1)}
+.nav-lessons{display:flex;gap:10px;padding:16px 24px;border-bottom:1px solid var(--border)}
+.btn-prev,.btn-next{flex:1;padding:11px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--white);font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s;text-align:center}
+.btn-next{background:var(--orange);color:var(--black);border-color:var(--orange)}
+.btn-prev:hover{border-color:rgba(255,255,255,.3)}
+.btn-next:hover{background:#cc7a00}
+.course-complete{text-align:center;padding:30px 24px}
+.course-complete h2{font-size:20px;font-weight:900;color:var(--green);margin-bottom:8px}
+.course-complete p{font-size:13px;color:var(--gray);margin-bottom:16px}
+.btn-cert{display:inline-block;background:var(--orange);color:var(--black);font-family:'Cairo',sans-serif;font-weight:900;font-size:14px;padding:12px 24px;border-radius:10px;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="seller-circle-dashboard.html" class="nav-back">← كورساتي</a>
+  <div class="nav-center" id="navTitle">Seller Circle — البيع على أمازون FBA</div>
+  <button class="mob-toggle" onclick="toggleSidebar()">☰ الدروس</button>
+</nav>
+
+<div class="layout">
+
+  <!-- PLAYER AREA -->
+  <div class="player-area">
+    <div class="video-wrap">
+      <iframe id="videoFrame"
+        src="https://iframe.mediadelivery.net/embed/657446/01f28482-8d26-4e12-a260-90dedbdadad3?autoplay=false&preload=true"
+        allowfullscreen allow="autoplay"></iframe>
+    </div>
+
+    <div class="lesson-meta">
+      <div class="lesson-title" id="lessonTitle">مقدمة الكورس</div>
+      <div class="lesson-info">
+        <span id="lessonNum">الدرس 1 من 33</span>
+        <span>⏱ 8 دقائق</span>
+        <button class="btn-done" onclick="markDone()" id="doneBtn">✓ تم</button>
+      </div>
+    </div>
+
+    <div class="nav-lessons">
+      <button class="btn-prev" onclick="prevLesson()">← الدرس السابق</button>
+      <button class="btn-next" onclick="nextLesson()">الدرس التالي →</button>
+    </div>
+
+    <div class="course-complete" id="completeMsg" style="display:none">
+      <h2>🎉 أتمت الكورس!</h2>
+      <p>مبروك — دلوقتي عندك كل الأدوات اللي تحتاجها تبدأ بيزنسك على أمازون</p>
+      <a href="https://wa.me/201030435954?text=أتمت كورس Seller Circle وعايز أبدأ!" class="btn-cert" target="_blank">تواصل معنا للخطوة الجاية 🚀</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <h3>Seller Circle</h3>
+      <div class="sidebar-progress">
+        <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+        <span class="prog-txt" id="progTxt">0 / 33</span>
+      </div>
+    </div>
+
+    <div id="moduleList"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<script>
+var curriculum = [
+  {title:'الأساسيات وفتح الحساب', lessons:[
+    {title:'مقدمة الكورس', dur:'8د'},
+    {title:'مصطلحات أمازون الأساسية', dur:'12د'},
+    {title:'متطلبات فتح الحساب', dur:'10د'},
+    {title:'خطوات فتح حساب أمازون', dur:'15د'},
+    {title:'نظرة عامة على Seller Central', dur:'18د'},
+    {title:'إكمال إعداد الحساب', dur:'12د'}
+  ]},
+  {title:'بحث المنتجات', lessons:[
+    {title:'مقدمة في Product Research', dur:'10د'},
+    {title:'معايير اختيار المنتج الناجح', dur:'20د'},
+    {title:'استخدام Helium 10', dur:'25د'},
+    {title:'تحليل المنافسين', dur:'18د'},
+    {title:'تقييم الربحية', dur:'15د'}
+  ]},
+  {title:'التوريد والمصانع', lessons:[
+    {title:'التواصل مع الموردين الصينيين', dur:'20د'},
+    {title:'طلب عينات', dur:'12د'},
+    {title:'التفاوض على السعر', dur:'18د'},
+    {title:'الشحن والاستيراد', dur:'22د'}
+  ]},
+  {title:'إنشاء الليستينج', lessons:[
+    {title:'كتابة عنوان مُحسَّن للسيو', dur:'15د'},
+    {title:'Bullet Points احترافية', dur:'14د'},
+    {title:'وصف المنتج', dur:'12د'},
+    {title:'صور المنتج', dur:'20د'},
+    {title:'إضافة المنتج على Seller Central', dur:'18د'},
+    {title:'تسجيل البراند', dur:'10د'}
+  ]},
+  {title:'الإطلاق وزيادة المبيعات', lessons:[
+    {title:'استراتيجية الإطلاق', dur:'22د'},
+    {title:'الحصول على أول Reviews', dur:'16د'},
+    {title:'PPC Basics', dur:'28د'},
+    {title:'حملات Sponsored Products', dur:'25د'},
+    {title:'تحليل الأداء وتحسين الكامبينز', dur:'20د'}
+  ]},
+  {title:'العمليات والنمو', lessons:[
+    {title:'إدارة المخزون', dur:'18د'},
+    {title:'خدمة العملاء وحل المشاكل', dur:'15د'},
+    {title:'فتح ماركت جديد', dur:'20د'},
+    {title:'توسيع كتالوج المنتجات', dur:'14د'}
+  ]},
+  {title:'الذكاء الاصطناعي في أمازون', lessons:[
+    {title:'استخدام الـ AI في Product Research', dur:'20د'},
+    {title:'كتابة ليستينج بالـ AI', dur:'15د'},
+    {title:'تحليل المنافسة بالـ AI', dur:'18د'},
+    {title:'أتمتة العمليات', dur:'12د'}
+  ]}
+];
+
+var currentLesson = 0;
+var totalLessons = curriculum.reduce(function(a,m){return a+m.lessons.length},0);
+var done = JSON.parse(localStorage.getItem('sc_done')||'[]');
+var flatLessons = [];
+curriculum.forEach(function(m){m.lessons.forEach(function(l){flatLessons.push(l)})});
+
+function buildSidebar(){
+  var html='';var idx=0;
+  curriculum.forEach(function(mod,mi){
+    var isOpen=mod.lessons.some(function(_,li){return flatIndex(mi,li)===currentLesson});
+    html+='<div class="module-group">';
+    html+='<div class="module-head'+(isOpen?' open':'')+'" onclick="toggleMod(this)"><span>'+mod.title+'</span><span class="module-arr">▼</span></div>';
+    html+='<div class="module-lessons">';
+    mod.lessons.forEach(function(les,li){
+      var fi=flatIndex(mi,li);
+      var isDone=done.indexOf(fi)>-1;
+      var isActive=fi===currentLesson;
+      html+='<div class="lesson-item'+(isActive?' active':'')+(isDone&&!isActive?' done':'')+'" onclick="goLesson('+fi+')">';
+      html+='<span class="lesson-ico">'+(isDone?'✓':isActive?'▶':'○')+'</span>';
+      html+='<span>'+les.title+'</span>';
+      html+='<span class="lesson-dur">'+les.dur+'</span>';
+      html+='</div>';
+    });
+    html+='</div></div>';
+  });
+  document.getElementById('moduleList').innerHTML=html;
+}
+
+function flatIndex(mi,li){
+  var idx=0;
+  for(var i=0;i<mi;i++) idx+=curriculum[i].lessons.length;
+  return idx+li;
+}
+
+function updatePlayer(){
+  var les=flatLessons[currentLesson];
+  document.getElementById('lessonTitle').textContent=les.title;
+  document.getElementById('lessonNum').textContent='الدرس '+(currentLesson+1)+' من '+totalLessons;
+  document.getElementById('doneBtn').style.background=done.indexOf(currentLesson)>-1?'#555':'';
+  var pct=Math.round(done.length/totalLessons*100);
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progTxt').textContent=done.length+' / '+totalLessons;
+  buildSidebar();
+}
+
+function goLesson(idx){
+  currentLesson=idx;
+  updatePlayer();
+  if(window.innerWidth<=700) toggleSidebar();
+}
+function nextLesson(){if(currentLesson<totalLessons-1){currentLesson++;updatePlayer()}}
+function prevLesson(){if(currentLesson>0){currentLesson--;updatePlayer()}}
+function markDone(){
+  if(done.indexOf(currentLesson)===-1){done.push(currentLesson);localStorage.setItem('sc_done',JSON.stringify(done));}
+  if(currentLesson<totalLessons-1){nextLesson();}
+  else{document.getElementById('completeMsg').style.display='block';}
+  updatePlayer();
+}
+function toggleMod(el){el.classList.toggle('open')}
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+
+updatePlayer();
+</script>
+</body>
+</html>

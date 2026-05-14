@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إتمام الاشتراك — Seller Circle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#FF9900;--black:#0F1111;--dark:#131921;--dark2:#1C2730;--dark3:#232F3E;--white:#fff;--gray:#8B949E;--green:#4ade80;--border:rgba(255,153,0,0.18)}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);direction:rtl;min-height:100vh}
+
+/* NAV */
+nav{background:rgba(15,17,17,0.97);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:20px;font-weight:900;text-decoration:none;color:var(--white)}
+.nav-logo span{color:var(--orange)}
+.nav-secure{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:6px}
+
+/* LAYOUT */
+.page{max-width:900px;margin:0 auto;padding:30px 20px 60px}
+.page-title{font-size:22px;font-weight:900;margin-bottom:6px}
+.page-sub{font-size:13px;color:var(--gray);margin-bottom:28px}
+.cols{display:flex;flex-direction:column;gap:20px}
+@media(min-width:680px){.cols{flex-direction:row;align-items:flex-start} .col-main{flex:1} .col-side{width:280px;flex-shrink:0}}
+
+/* ORDER SUMMARY */
+.order-card{background:var(--dark2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.order-head{background:var(--dark3);padding:14px 18px;font-size:13px;font-weight:700;color:var(--orange);border-bottom:1px solid var(--border)}
+.order-body{padding:18px}
+.order-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.order-item:last-child{border-bottom:none}
+.order-item-name{font-size:14px;font-weight:700}
+.order-item-desc{font-size:11px;color:var(--gray);margin-top:3px}
+.order-item-price{font-size:18px;font-weight:900;color:var(--orange);white-space:nowrap}
+.order-total{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:2px solid var(--orange)}
+.order-total-lbl{font-size:14px;font-weight:700}
+.order-total-val{font-size:26px;font-weight:900;color:var(--orange)}
+.order-badge{margin-top:12px;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.25);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--green);text-align:center}
+
+/* PAYMENT METHODS */
+.section-lbl{font-size:13px;font-weight:700;color:var(--orange);margin-bottom:12px;letter-spacing:1px;text-transform:uppercase}
+.pay-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.pay-tab{flex:1;min-width:100px;padding:10px 8px;background:var(--dark2);border:2px solid var(--border);border-radius:10px;text-align:center;cursor:pointer;transition:all .2s;font-family:'Cairo',sans-serif;color:var(--white);font-size:13px;font-weight:700}
+.pay-tab.active{border-color:var(--orange);background:rgba(255,153,0,0.08);color:var(--orange)}
+.pay-tab:hover{border-color:rgba(255,153,0,0.5)}
+.pay-tab-ico{font-size:22px;display:block;margin-bottom:4px}
+
+/* PAYMENT PANELS */
+.pay-panel{display:none}
+.pay-panel.active{display:block}
+.pay-box{background:var(--dark2);border:1px solid var(--border);border-radius:14px;padding:22px}
+.pay-number{background:var(--dark3);border:1px solid rgba(255,153,0,0.3);border-radius:10px;padding:14px 18px;text-align:center;margin-bottom:16px}
+.pay-number-val{font-size:28px;font-weight:900;color:var(--orange);letter-spacing:2px;display:block}
+.pay-number-lbl{font-size:12px;color:var(--gray);margin-top:4px;display:block}
+.pay-steps{list-style:none;margin-bottom:20px}
+.pay-steps li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:13px;color:#ccc;border-bottom:1px solid rgba(255,255,255,0.05)}
+.pay-steps li:last-child{border-bottom:none}
+.pay-step-num{background:var(--orange);color:var(--black);font-size:11px;font-weight:900;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pay-note{background:rgba(255,153,0,0.07);border:1px solid rgba(255,153,0,0.2);border-radius:8px;padding:12px;font-size:12px;color:#ccc;text-align:center;margin-bottom:18px}
+.pay-note strong{color:var(--orange)}
+
+/* BUTTONS */
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-family:'Cairo',sans-serif;font-weight:900;font-size:16px;padding:16px;border-radius:12px;text-decoration:none;transition:all .2s;border:none;width:100%;cursor:pointer}
+.btn-wa:hover{background:#1da851;transform:translateY(-1px)}
+.btn-wa svg{width:22px;height:22px;fill:white;flex-shrink:0}
+.btn-confirm{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:var(--black);font-family:'Cairo',sans-serif;font-weight:900;font-size:15px;padding:15px;border-radius:12px;text-decoration:none;border:none;width:100%;cursor:pointer;margin-top:10px;transition:all .2s}
+.btn-confirm:hover{background:#cc7a00}
+
+/* STEP INDICATOR */
+.step-bar{display:flex;align-items:center;gap:0;margin-bottom:24px}
+.step-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--gray)}
+.step-item.done{color:var(--green)}
+.step-item.active{color:var(--orange)}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;background:var(--dark3);border:2px solid var(--border);flex-shrink:0}
+.step-item.done .step-num{background:rgba(74,222,128,0.15);border-color:var(--green);color:var(--green)}
+.step-item.active .step-num{background:rgba(255,153,0,0.15);border-color:var(--orange);color:var(--orange)}
+.step-line{flex:1;height:2px;background:var(--border);margin:0 8px}
+.step-line.done{background:var(--green)}
+
+/* ACCOUNT NOTE */
+.account-note{background:rgba(74,222,128,0.07);border:1px solid rgba(74,222,128,0.25);border-radius:12px;padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.account-note-ico{font-size:22px;flex-shrink:0}
+.account-note-text{font-size:13px;color:#ccc;line-height:1.7}
+.account-note-text strong{color:var(--green)}
+
+/* LOGIN PROMPT */
+.login-prompt{background:var(--dark3);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:12px;color:var(--gray);text-align:center;margin-bottom:20px}
+.login-prompt a{color:var(--orange);text-decoration:none;font-weight:700}
+
+/* GUARANTEE */
+.guarantee{text-align:center;margin-top:16px;font-size:12px;color:var(--gray)}
+.guarantee strong{color:var(--white)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="seller-circle-preview.html" class="nav-logo">Seller <span>Circle</span></a>
+  <div class="nav-secure">🔒 دفع آمن ومضمون</div>
+</nav>
+
+<div class="page">
+  <div class="page-title">إتمام الاشتراك</div>
+  <p class="page-sub">خطوة واحدة وتبدأ رحلتك على أمازون</p>
+
+  <div class="cols">
+
+    <!-- MAIN: PAYMENT -->
+    <div class="col-main">
+
+      <!-- STEPS -->
+      <div class="step-bar">
+        <div class="step-item done"><div class="step-num">✓</div><span>إنشاء حساب</span></div>
+        <div class="step-line done"></div>
+        <div class="step-item active"><div class="step-num">②</div><span>الدفع</span></div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">③</div><span>تفعيل الكورس</span></div>
+      </div>
+
+      <div class="account-note">
+        <div class="account-note-ico">✅</div>
+        <div class="account-note-text">
+          <strong>تم إنشاء حسابك بنجاح!</strong><br>
+          دلوقتي ادفع وابعتلنا صورة الإيصال + الإيميل اللي سجلت بيه على واتساب — وهنفعّل كورسك فوراً.
+        </div>
+      </div>
+
+      <div class="login-prompt">
+        مش عندك حساب؟ <a href="seller-circle-register.html">سجّل الأول</a> &nbsp;|&nbsp; عندك حساب؟ <a href="seller-circle-login.html">سجّل دخولك</a>
+      </div>
+
+      <div class="section-lbl">اختار طريقة الدفع</div>
+
+      <div class="pay-tabs">
+        <button class="pay-tab active" onclick="switchTab('wa')">
+          <span class="pay-tab-ico">💬</span>واتساب
+        </button>
+        <button class="pay-tab" onclick="switchTab('vf')">
+          <span class="pay-tab-ico">📱</span>Vodafone Cash
+        </button>
+        <button class="pay-tab" onclick="switchTab('ip')">
+          <span class="pay-tab-ico">🏦</span>Instapay
+        </button>
+      </div>
+
+      <!-- WHATSAPP -->
+      <div class="pay-panel active" id="panel-wa">
+        <div class="pay-box">
+          <div class="pay-number">
+            <span class="pay-number-val">01030435954</span>
+            <span class="pay-number-lbl">رقم واتساب التواصل والدفع</span>
+          </div>
+          <ul class="pay-steps">
+            <li><div class="pay-step-num">١</div><span>اضغط الزر تحت — هيفتحلك واتساب مع رسالة جاهزة</span></li>
+            <li><div class="pay-step-num">٢</div><span>ابعت اسمك ورقم تليفونك وطريقة الدفع اللي هتستخدمها</span></li>
+            <li><div class="pay-step-num">٣</div><span>هنبعتلك تعليمات الدفع + بيانات تحويل المبلغ</span></li>
+            <li><div class="pay-step-num">٤</div><span>بعد التحويل ابعتنا صورة الإيصال وهنفعّل اشتراكك فوراً</span></li>
+          </ul>
+          <div class="pay-note">⏰ التفعيل بيتم خلال <strong>ساعة واحدة</strong> من استلام الإيصال</div>
+          <a href="#" onclick="validateAndOpen('واتساب'); return false;" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+            ابدأ الاشتراك عبر واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- VODAFONE CASH -->
+      <div class="pay-panel" id="panel-vf">
+        <div class="pay-box">
+          <div class="pay-number">
+            <span class="pay-number-val">01030435954</span>
+            <span class="pay-number-lbl">رقم Vodafone Cash</span>
+          </div>
+          <ul class="pay-steps">
+            <li><div class="pay-step-num">١</div><span>افتح تطبيق Vodafone Cash أو اتصل بـ *9#</span></li>
+            <li><div class="pay-step-num">٢</div><span>اختار "تحويل" وادخل الرقم <strong style="color:var(--orange)">01030435954</strong></span></li>
+            <li><div class="pay-step-num">٣</div><span>حوّل مبلغ <strong style="color:var(--orange)">999 جنيه</strong></span></li>
+            <li><div class="pay-step-num">٤</div><span>ابعت صورة الإيصال على واتساب وهنفعّل اشتراكك فوراً</span></li>
+          </ul>
+          <div class="pay-note">⏰ التفعيل بيتم خلال <strong>ساعة واحدة</strong> من استلام الإيصال</div>
+          <a href="#" onclick="validateAndOpen('Vodafone Cash'); return false;" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+            ابعت إيصال الدفع على واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- INSTAPAY -->
+      <div class="pay-panel" id="panel-ip">
+        <div class="pay-box">
+          <div class="pay-number">
+            <span class="pay-number-val">01030435954</span>
+            <span class="pay-number-lbl">رقم Instapay (IPN)</span>
+          </div>
+          <ul class="pay-steps">
+            <li><div class="pay-step-num">١</div><span>افتح تطبيق البنك أو Instapay وابحث عن "تحويل فوري"</span></li>
+            <li><div class="pay-step-num">٢</div><span>حوّل مبلغ <strong style="color:var(--orange)">999 جنيه</strong> على الرقم <strong style="color:var(--orange)">01030435954</strong></span></li>
+            <li><div class="pay-step-num">٣</div><span>بعد التحويل ابعت صورة الإيصال على واتساب</span></li>
+            <li><div class="pay-step-num">٤</div><span>هنفعّل اشتراكك فوراً بعد التأكيد</span></li>
+          </ul>
+          <div class="pay-note">⏰ التفعيل بيتم خلال <strong>ساعة واحدة</strong> من استلام الإيصال</div>
+          <a href="#" onclick="validateAndOpen('Instapay'); return false;" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.856L0 24l6.302-1.51A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.017-1.375l-.36-.214-3.732.894.938-3.63-.235-.374A9.795 9.795 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+            ابعت إيصال الدفع على واتساب
+          </a>
+        </div>
+      </div>
+
+      <div class="guarantee">🛡️ <strong>ضمان استرداد 3 أيام</strong> — مش راضي؟ بنرجعلك فلوسك بدون أسئلة</div>
+    </div>
+
+    <!-- SIDE: ORDER SUMMARY -->
+    <div class="col-side">
+      <div class="order-card">
+        <div class="order-head">📦 ملخص الطلب</div>
+        <div class="order-body">
+          <div class="order-item">
+            <div>
+              <div class="order-item-name">Seller Circle — الكورس الكامل</div>
+              <div class="order-item-desc">33 فيديو · 10 ساعات · وصول مدى الحياة</div>
+            </div>
+            <div class="order-item-price">999ج</div>
+          </div>
+          <div class="order-item">
+            <div>
+              <div class="order-item-name">البونصات</div>
+              <div class="order-item-desc">مكالمات أسبوعية + مجموعة واتساب + شيت التفاوض + AI</div>
+            </div>
+            <div class="order-item-price" style="color:var(--green)">مجاناً</div>
+          </div>
+          <div class="order-total">
+            <div class="order-total-lbl">الإجمالي</div>
+            <div class="order-total-val">999ج</div>
+          </div>
+          <div class="order-badge">✅ وفّرت 5,000 جنيه على السعر الأصلي</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.pay-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.pay-panel').forEach(function(p){p.classList.remove('active')});
+  event.currentTarget.classList.add('active');
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+// validate fields before opening WhatsApp
+function validateAndOpen(method){
+  var msg = 'السلام عليكم،\n'
+    + 'دفعت اشتراك كورس Seller Circle (999 جنيه) عن طريق ' + method + '.\n\n'
+    + '📧 الإيميل اللي سجلت بيه: \n'
+    + '📸 بابعتلكم صورة الإيصال دلوقتي.';
+
+  window.open('https://wa.me/201030435954?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>
